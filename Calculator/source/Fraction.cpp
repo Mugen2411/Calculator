@@ -31,6 +31,10 @@ namespace Mugen
 	}
 	long double Fraction::GetValue() const
 	{
+		if (0 == m_top)
+		{
+			return 0.0;
+		}
 		return static_cast<long double>(m_top) / static_cast<long double>(m_bottom);
 	}
 	void Fraction::Reduce()
@@ -92,5 +96,9 @@ namespace Mugen
 		retval.Reduce();
 
 		return retval;
+	}
+	Fraction Fraction::operator-()
+	{
+		return Fraction(-m_top, m_bottom);
 	}
 }

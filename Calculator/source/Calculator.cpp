@@ -1,12 +1,13 @@
 #include "Calculator.h"
 #include <cmath>
+#include <stack>
 
 namespace Mugen
 {
 	Calculator::Calculator(const char* pExpression, size_t length)
 		:m_pExpression(pExpression)
-		,m_length(length)
-		,m_currentIndex(0)
+		, m_length(length)
+		, m_currentIndex(0)
 		, m_tokenList{}
 	{
 	}
@@ -20,6 +21,25 @@ namespace Mugen
 		{
 			return convertResult;
 		}
+
+		// トークンに分解したものを逆ポーランド記法に並べ替える
+		ResultCode reverseResult = _ConvertToReversePolish();
+
+		// 並べ替えに失敗したら終了
+		if (ResultCode::Success != reverseResult)
+		{
+			return reverseResult;
+		}
+
+		// 並べ替えたものを実際に計算する
+		ResultCode calculateResult = _CalclateReversePolish(result);
+
+		// 計算に失敗したら終了
+		if (ResultCode::Success != calculateResult)
+		{
+			return calculateResult;
+		}
+
 		return ResultCode::Success;
 	}
 	ResultCode Calculator::_ConvertToTokenList()
@@ -160,7 +180,7 @@ namespace Mugen
 		{
 			const TokenTag lastTokenTag = m_tokenList.back().tag;
 			// 直前が数値か括弧の終わりだったら二項演算子
-			if (TokenTag::Number == lastTokenTag || TokenTag::BrockEnd == lastTokenTag)
+			if (TokenTag::Number == lastTokenTag || TokenTag::BlockEnd == lastTokenTag)
 			{
 				token.tag = TokenTag::BinaryOperator;
 			}
@@ -170,7 +190,7 @@ namespace Mugen
 				token.tag = TokenTag::UnaryOperator;
 			}
 		}
-		
+
 		switch (m_pExpression[m_currentIndex])
 		{
 		case '+':
@@ -206,15 +226,196 @@ namespace Mugen
 		switch (m_pExpression[m_currentIndex])
 		{
 		case '(':
-			token.tag = TokenTag::BrockBegin;
+			token.tag = TokenTag::BlockBegin;
 			break;
 		case ')':
-			token.tag = TokenTag::BrockEnd;
+			token.tag = TokenTag::BlockEnd;
 			break;
 		default:
 			return ResultCode::SyntaxError;
 		}
 		forwardIndex();
+		return ResultCode::Success;
+	}
+	ResultCode Calculator::_ConvertToReversePolish()
+	{
+		std::stack<TOKEN> tokenStack;
+		TOKEN lastOp = {};
+		for (auto itr = m_tokenList.begin(); itr != m_tokenList.end();)
+		{
+			TOKEN cur = *itr;
+			itr = m_tokenList.erase(itr);
+			switch (cur.tag)
+			{
+			case TokenTag::Number:
+			case TokenTag::UnaryOperator:
+				m_reversePolish.emplace(cur);
+				break;
+
+			case TokenTag::BlockBegin:
+				tokenStack.emplace(cur);
+				break;
+
+			case TokenTag::BinaryOperator:
+				if (tokenStack.empty())
+				{
+					tokenStack.emplace(cur);
+					break;
+				}
+				lastOp = tokenStack.top();
+				if (lastOp.tag != TokenTag::BinaryOperator)
+				{
+
+				}
+				else if (lastOp.operatorTag >= cur.operatorTag)
+				{
+					m_reversePolish.emplace(lastOp);
+					tokenStack.pop();
+				}
+				tokenStack.push(cur);
+				break;
+
+			case TokenTag::BlockEnd:
+				while (1)
+				{
+					if (tokenStack.empty())
+					{
+						return ResultCode::SyntaxError;
+					}
+					lastOp = tokenStack.top();
+					tokenStack.pop();
+					if (lastOp.tag == TokenTag::BlockBegin)
+					{
+						break;
+					}
+					m_reversePolish.emplace(lastOp);
+				}
+				break;
+			default:
+				return ResultCode::SyntaxError;
+				break;
+			}
+		}
+		while (!tokenStack.empty())
+		{
+			TOKEN lastOp = tokenStack.top();
+			m_reversePolish.emplace(lastOp);
+			tokenStack.pop();
+		}
+		return ResultCode::Success;
+	}
+	ResultCode Calculator::_CalclateReversePolish(Fraction& ans)
+	{
+		std::stack<TOKEN> stack;
+		ResultCode resultCode;
+		TOKEN result = {};
+		TOKEN tmp = {};
+		TOKEN lhs = {};
+		TOKEN rhs = {};
+		while (!m_reversePolish.empty())
+		{
+			tmp = m_reversePolish.front();
+			m_reversePolish.pop();
+			switch (tmp.tag)
+			{
+			case TokenTag::Number:
+				stack.emplace(tmp);
+				break;
+			case TokenTag::UnaryOperator:
+				if (stack.empty())
+				{
+					return ResultCode::SyntaxError;
+				}
+				lhs = stack.top();
+				stack.pop();
+				resultCode = _CalclateUnaryOperator(tmp, lhs, result);
+				if (ResultCode::Success != resultCode)
+				{
+					return resultCode;
+				}
+				stack.emplace(result);
+				break;
+			case TokenTag::BinaryOperator:
+				if (stack.size() < 2)
+				{
+					return ResultCode::SyntaxError;
+				}
+				rhs = stack.top();
+				stack.pop();
+				lhs = stack.top();
+				stack.pop();
+				resultCode = _CalclateBinaryOperator(tmp, lhs, rhs, result);
+				if (ResultCode::Success != resultCode)
+				{
+					return resultCode;
+				}
+				stack.emplace(result);
+				break;
+			default:
+				break;
+			}
+		}
+		if (stack.size() != 1)
+		{
+			return ResultCode::SyntaxError;
+		}
+		ans = stack.top().value;
+		return ResultCode::Success;
+	}
+	ResultCode Calculator::_CalclateUnaryOperator(const TOKEN operatorToken, const TOKEN& lhsToken, TOKEN& ans)
+	{
+		if (lhsToken.tag != TokenTag::Number)
+		{
+			return ResultCode::SyntaxError;
+		}
+		switch (operatorToken.operatorTag)
+		{
+		case OperatorTag::Plus:
+			ans = lhsToken;
+			break;
+		case OperatorTag::Minus:
+			ans = lhsToken;
+			ans.value = -ans.value;
+			break;
+		default:
+			return ResultCode::SyntaxError;
+		}
+		return ResultCode::Success;
+	}
+
+	ResultCode Calculator::_CalclateBinaryOperator(const TOKEN operatorToken, const TOKEN& lhsToken, const TOKEN& rhsToken, TOKEN& ans)
+	{
+		if (lhsToken.tag != TokenTag::Number)
+		{
+			return ResultCode::SyntaxError;
+		}
+		if (rhsToken.tag != TokenTag::Number)
+		{
+			return ResultCode::SyntaxError;
+		}
+		ans.tag = TokenTag::Number;
+		ans.value = lhsToken.value;
+		switch (operatorToken.operatorTag)
+		{
+		case OperatorTag::Plus:
+			ans.value = ans.value + rhsToken.value;
+			break;
+		case OperatorTag::Minus:
+			ans.value = ans.value - rhsToken.value;
+			break;
+		case OperatorTag::Multiply:
+			ans.value = ans.value * rhsToken.value;
+			break;
+		case OperatorTag::Divide:
+			if (0 == rhsToken.value.GetTop())
+			{
+				return ResultCode::DivideByZero;
+			}
+			ans.value = ans.value / rhsToken.value;
+			break;
+		default:
+			return ResultCode::SyntaxError;
+		}
 		return ResultCode::Success;
 	}
 }

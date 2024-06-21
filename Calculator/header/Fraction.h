@@ -89,6 +89,12 @@ namespace Mugen
 		*/
 		Fraction operator/(const Fraction& rhs);
 
+		/**
+		 * @brief ’P€Œ¸Z‰‰Zq
+		 * @return •„†”½“]‚µ‚½Œ‹‰Ê
+		*/
+		Fraction operator-();
+
 	private:
 		__int64 m_top;			//!< •ªq
 		__int64 m_bottom;		//!< •ª•ê

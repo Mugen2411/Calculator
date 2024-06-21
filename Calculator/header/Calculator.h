@@ -2,7 +2,7 @@
 #include <ResultCode.h>
 #include <TOKEN.h>
 #include <list>
-#include <stack>
+#include <queue>
 
 namespace Mugen
 {
@@ -63,10 +63,43 @@ namespace Mugen
 		*/
 		ResultCode _MakeBrockToken(TOKEN& token);
 
+		/**
+		 * @brief 逆ポーランド記法に並べ替える
+		 * @return リザルトコード
+		*/
+		ResultCode _ConvertToReversePolish();
+
+		/**
+		 * @brief 逆ポーランド記法に並べ替えた式を計算する
+		 * @param ans 答えを格納する出力変数
+		 * @return リザルトコード
+		*/
+		ResultCode _CalclateReversePolish(Fraction& ans);
+
+		/**
+		 * @brief 単項演算子の計算
+		 * @param operatorToken 演算子
+		 * @param lhsToken 左辺
+		 * @param ans 答えを出力する変数
+		 * @return リザルトコード
+		*/
+		ResultCode _CalclateUnaryOperator(const TOKEN operatorToken, const TOKEN& lhsToken, TOKEN& ans);
+
+		/**
+		 * @brief 二項演算子の計算
+		 * @param operatorToken 演算子
+		 * @param lhsToken 左辺
+		 * @param rhsToken 右辺
+		 * @param ans 答えを出力する変数
+		 * @return リザルトコード
+		*/
+		ResultCode _CalclateBinaryOperator(const TOKEN operatorToken, const TOKEN& lhsToken, const TOKEN& rhsToken, TOKEN& ans);
+
 	private:
 		const char* m_pExpression;					//!< 式
 		const size_t m_length;						//!< 式の長さ
 		size_t m_currentIndex;						//!< 現在参照している位置
 		std::list<TOKEN> m_tokenList;				//!< トークンを入力順に格納するリスト
+		std::queue<TOKEN> m_reversePolish;			//!< トークンを逆ポーランド記法の順に格納するキュー
 	};
 }

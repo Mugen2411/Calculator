@@ -11,8 +11,8 @@ namespace Mugen
 		Number,				//!< 数値
 		UnaryOperator,		//!< 単項演算子
 		BinaryOperator,		//!< 二項演算子
-		BrockBegin,			//!< 括弧の始まり
-		BrockEnd,			//!< 括弧の終わり
+		BlockBegin,			//!< 括弧の始まり
+		BlockEnd,			//!< 括弧の終わり
 	};
 	/**
 	 * @brief 演算子の種類を識別するタグ
