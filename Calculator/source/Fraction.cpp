@@ -21,6 +21,14 @@ namespace Mugen
 	{
 		return m_bottom;
 	}
+	void Fraction::SetTop(__int64 top)
+	{
+		m_top = top;
+	}
+	void Fraction::SetBottom(__int64 bottom)
+	{
+		m_bottom = bottom;
+	}
 	long double Fraction::GetValue() const
 	{
 		return static_cast<long double>(m_top) / static_cast<long double>(m_bottom);

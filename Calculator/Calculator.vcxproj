@@ -135,9 +135,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="header\Calculator.h" />
     <ClInclude Include="header\Fraction.h" />
+    <ClInclude Include="header\ResultCode.h" />
+    <ClInclude Include="header\TOKEN.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Calculator.cpp" />
     <ClCompile Include="source\Fraction.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

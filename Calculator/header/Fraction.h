@@ -39,6 +39,18 @@ namespace Mugen
 		__int64 GetBottom() const;
 
 		/**
+		 * @brief 分子を設定する
+		 * @param top 分子
+		*/
+		void SetTop(__int64 top);
+
+		/**
+		 * @brief 分母を設定する
+		 * @param bottom 分母
+		*/
+		void SetBottom(__int64 bottom);
+
+		/**
 		 * @brief 値を実数値として取得する
 		 * @return 値
 		*/
