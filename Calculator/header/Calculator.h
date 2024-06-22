@@ -3,6 +3,7 @@
 #include <TOKEN.h>
 #include <list>
 #include <queue>
+#include <stack>
 
 namespace Mugen
 {
@@ -68,6 +69,14 @@ namespace Mugen
 		 * @return リザルトコード
 		*/
 		ResultCode _ConvertToReversePolish();
+
+		/**
+		 * @brief 演算子を逆ポーランド記法に並べ替える
+		 * @param current 現在引いているトークン
+		 * @param tokenStack 演算子を溜めているスタック
+		 * @return リザルトコード
+		*/
+		ResultCode _ConvertOperatorToReversePolish(const TOKEN& current, std::stack<TOKEN>& tokenStack);
 
 		/**
 		 * @brief 逆ポーランド記法に並べ替えた式を計算する

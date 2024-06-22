@@ -157,10 +157,6 @@ namespace Mugen
 		} while (forwardIndex());
 
 		token.value.SetTop(mantissa);
-		if (isInteger)
-		{
-			return ResultCode::Success;
-		}
 		__int64 bottom = 1;
 		for (int i = 0; i < exponent; ++i)
 		{
@@ -248,7 +244,6 @@ namespace Mugen
 			switch (cur.tag)
 			{
 			case TokenTag::Number:
-			case TokenTag::UnaryOperator:
 				m_reversePolish.emplace(cur);
 				break;
 
@@ -256,23 +251,9 @@ namespace Mugen
 				tokenStack.emplace(cur);
 				break;
 
+			case TokenTag::UnaryOperator:
 			case TokenTag::BinaryOperator:
-				if (tokenStack.empty())
-				{
-					tokenStack.emplace(cur);
-					break;
-				}
-				lastOp = tokenStack.top();
-				if (lastOp.tag != TokenTag::BinaryOperator)
-				{
-
-				}
-				else if (lastOp.operatorTag >= cur.operatorTag)
-				{
-					m_reversePolish.emplace(lastOp);
-					tokenStack.pop();
-				}
-				tokenStack.push(cur);
+				_ConvertOperatorToReversePolish(cur, tokenStack);
 				break;
 
 			case TokenTag::BlockEnd:
@@ -302,6 +283,31 @@ namespace Mugen
 			m_reversePolish.emplace(lastOp);
 			tokenStack.pop();
 		}
+		return ResultCode::Success;
+	}
+	ResultCode Calculator::_ConvertOperatorToReversePolish(const TOKEN& current, std::stack<TOKEN>& tokenStack)
+	{
+		TOKEN lastOp = {};
+
+		if (tokenStack.empty())
+		{
+			tokenStack.emplace(current);
+			return ResultCode::Success;
+		}
+		lastOp = tokenStack.top();
+
+		const bool isUnary = lastOp.tag == TokenTag::UnaryOperator;
+		const bool isBinary = lastOp.tag == TokenTag::UnaryOperator;
+		if (isUnary || (isBinary && lastOp.operatorTag >= current.operatorTag))
+		{
+			m_reversePolish.emplace(lastOp);
+			tokenStack.pop();
+		}
+		else
+		{
+
+		}
+		tokenStack.push(current);
 		return ResultCode::Success;
 	}
 	ResultCode Calculator::_CalclateReversePolish(Fraction& ans)
