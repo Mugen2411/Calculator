@@ -79,11 +79,33 @@ namespace Mugen
 		ResultCode _ConvertOperatorToReversePolish(const TOKEN& current, std::stack<TOKEN>& tokenStack);
 
 		/**
+		 * @brief 括弧の終わりを逆ポーランド記法に並べ替える
+		 * @param current 現在引いているトークン
+		 * @param tokenStack 演算子を溜めているスタック
+		 * @return リザルトコード
+		*/
+		ResultCode _ConvertBlockEndToReversePolish(const TOKEN& current, std::stack<TOKEN>& tokenStack);
+
+		/**
 		 * @brief 逆ポーランド記法に並べ替えた式を計算する
 		 * @param ans 答えを格納する出力変数
 		 * @return リザルトコード
 		*/
 		ResultCode _CalclateReversePolish(Fraction& ans);
+
+		/**
+		 * @brief 逆ポーランド記法に並べ替えられた式から単項演算子を抽出する
+		 * @param stack 処理待ちトークンが積まれたスタック
+		 * @return リザルトコード
+		*/
+		ResultCode _ExtractUnaryOperator(const TOKEN& operaterToken, std::stack<TOKEN>& stack);
+
+		/**
+		 * @brief 逆ポーランド記法に並べ替えられた式から二項演算子を抽出する
+		 * @param stack 処理待ちトークンが積まれたスタック
+		 * @return リザルトコード
+		*/
+		ResultCode _ExtractBinaryOperator(const TOKEN& operaterToken, std::stack<TOKEN>& stack);
 
 		/**
 		 * @brief 単項演算子の計算

@@ -37,5 +37,6 @@ int main()
 	TestCalclator("-3.0*-12.0");
 	TestCalclator("(1.25 * 8)  + 2");
 	TestCalclator("-(0.3125 * 16)  - 2");
+	TestCalclator("(5/6) * (3/2) * (4/5)");
 	return 0;
 }

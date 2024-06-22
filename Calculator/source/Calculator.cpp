@@ -237,6 +237,7 @@ namespace Mugen
 	{
 		std::stack<TOKEN> tokenStack;
 		TOKEN lastOp = {};
+		ResultCode resultCode = ResultCode::Success;
 		for (auto itr = m_tokenList.begin(); itr != m_tokenList.end();)
 		{
 			TOKEN cur = *itr;
@@ -245,36 +246,30 @@ namespace Mugen
 			{
 			case TokenTag::Number:
 				m_reversePolish.emplace(cur);
+				resultCode = ResultCode::Success;
 				break;
 
 			case TokenTag::BlockBegin:
 				tokenStack.emplace(cur);
+				resultCode = ResultCode::Success;
 				break;
 
 			case TokenTag::UnaryOperator:
 			case TokenTag::BinaryOperator:
-				_ConvertOperatorToReversePolish(cur, tokenStack);
+				resultCode = _ConvertOperatorToReversePolish(cur, tokenStack);
 				break;
 
 			case TokenTag::BlockEnd:
-				while (1)
-				{
-					if (tokenStack.empty())
-					{
-						return ResultCode::SyntaxError;
-					}
-					lastOp = tokenStack.top();
-					tokenStack.pop();
-					if (lastOp.tag == TokenTag::BlockBegin)
-					{
-						break;
-					}
-					m_reversePolish.emplace(lastOp);
-				}
+				resultCode = _ConvertBlockEndToReversePolish(cur, tokenStack);
 				break;
+
 			default:
 				return ResultCode::SyntaxError;
 				break;
+			}
+			if (ResultCode::Success != resultCode)
+			{
+				return resultCode;
 			}
 		}
 		while (!tokenStack.empty())
@@ -310,14 +305,33 @@ namespace Mugen
 		tokenStack.push(current);
 		return ResultCode::Success;
 	}
+	ResultCode Calculator::_ConvertBlockEndToReversePolish(const TOKEN& current, std::stack<TOKEN>& tokenStack)
+	{
+		TOKEN lastOp = {};
+
+		while (1)
+		{
+			if (tokenStack.empty())
+			{
+				return ResultCode::SyntaxError;
+			}
+			lastOp = tokenStack.top();
+			tokenStack.pop();
+			if (lastOp.tag == TokenTag::BlockBegin)
+			{
+				break;
+			}
+			m_reversePolish.emplace(lastOp);
+		}
+
+		return ResultCode::Success;
+	}
 	ResultCode Calculator::_CalclateReversePolish(Fraction& ans)
 	{
 		std::stack<TOKEN> stack;
 		ResultCode resultCode;
-		TOKEN result = {};
 		TOKEN tmp = {};
-		TOKEN lhs = {};
-		TOKEN rhs = {};
+
 		while (!m_reversePolish.empty())
 		{
 			tmp = m_reversePolish.front();
@@ -326,39 +340,20 @@ namespace Mugen
 			{
 			case TokenTag::Number:
 				stack.emplace(tmp);
+				resultCode = ResultCode::Success;
 				break;
 			case TokenTag::UnaryOperator:
-				if (stack.empty())
-				{
-					return ResultCode::SyntaxError;
-				}
-				lhs = stack.top();
-				stack.pop();
-				resultCode = _CalclateUnaryOperator(tmp, lhs, result);
-				if (ResultCode::Success != resultCode)
-				{
-					return resultCode;
-				}
-				stack.emplace(result);
+				resultCode = _ExtractUnaryOperator(tmp, stack);
 				break;
 			case TokenTag::BinaryOperator:
-				if (stack.size() < 2)
-				{
-					return ResultCode::SyntaxError;
-				}
-				rhs = stack.top();
-				stack.pop();
-				lhs = stack.top();
-				stack.pop();
-				resultCode = _CalclateBinaryOperator(tmp, lhs, rhs, result);
-				if (ResultCode::Success != resultCode)
-				{
-					return resultCode;
-				}
-				stack.emplace(result);
+				resultCode = _ExtractBinaryOperator(tmp, stack);
 				break;
 			default:
 				break;
+			}
+			if (ResultCode::Success != resultCode)
+			{
+				return resultCode;
 			}
 		}
 		if (stack.size() != 1)
@@ -366,6 +361,46 @@ namespace Mugen
 			return ResultCode::SyntaxError;
 		}
 		ans = stack.top().value;
+		return ResultCode::Success;
+	}
+	ResultCode Calculator::_ExtractUnaryOperator(const TOKEN& operaterToken, std::stack<TOKEN>& stack)
+	{
+		ResultCode resultCode;
+		TOKEN result = {};
+
+		if (stack.empty())
+		{
+			return ResultCode::SyntaxError;
+		}
+		TOKEN lhs = stack.top();
+		stack.pop();
+		resultCode = _CalclateUnaryOperator(operaterToken, lhs, result);
+		if (ResultCode::Success != resultCode)
+		{
+			return resultCode;
+		}
+		stack.emplace(result);
+		return ResultCode::Success;
+	}
+	ResultCode Calculator::_ExtractBinaryOperator(const TOKEN& operaterToken, std::stack<TOKEN>& stack)
+	{
+		TOKEN result = {};
+
+		if (stack.size() < 2)
+		{
+			return ResultCode::SyntaxError;
+		}
+		TOKEN rhs = stack.top();
+		stack.pop();
+		TOKEN lhs = stack.top();
+		stack.pop();
+		ResultCode resultCode = _CalclateBinaryOperator(operaterToken, lhs, rhs, result);
+		if (ResultCode::Success != resultCode)
+		{
+			return resultCode;
+		}
+		stack.emplace(result);
+
 		return ResultCode::Success;
 	}
 	ResultCode Calculator::_CalclateUnaryOperator(const TOKEN operatorToken, const TOKEN& lhsToken, TOKEN& ans)
