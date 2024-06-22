@@ -1,0 +1,110 @@
+\doxysection{Fraction.\+cpp}
+\hypertarget{_fraction_8cpp_source}{}\label{_fraction_8cpp_source}\index{Calculator/source/Fraction.cpp@{Calculator/source/Fraction.cpp}}
+\mbox{\hyperlink{_fraction_8cpp}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_fraction_8h}{Fraction.h}}>}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_mugen}{Mugen}}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00006}\mbox{\hyperlink{class_mugen_1_1_fraction_a2b5719c4ecfdb5a43b3ff45807c9df06}{00006}}\ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction_a2b5719c4ecfdb5a43b3ff45807c9df06}{Fraction::Fraction}}()}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ :m\_top(0)}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ ,m\_bottom(0)}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00010}00010\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00011}\mbox{\hyperlink{class_mugen_1_1_fraction_a3fd9a44c37c15b749aeeb4411cc0c40f}{00011}}\ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction_a2b5719c4ecfdb5a43b3ff45807c9df06}{Fraction::Fraction}}(\_\_int64\ top,\ \_\_int64\ bottom)}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ :m\_top(top)}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ ,m\_bottom(bottom)}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00016}\mbox{\hyperlink{class_mugen_1_1_fraction_ab31e26afa2ff329e5aa480d1137131f1}{00016}}\ \ \ \ \ \_\_int64\ \mbox{\hyperlink{class_mugen_1_1_fraction_ab31e26afa2ff329e5aa480d1137131f1}{Fraction::GetTop}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00017}00017\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}};}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00020}\mbox{\hyperlink{class_mugen_1_1_fraction_a16f75f6e28c9a18a66c1ce6b5eb9a4be}{00020}}\ \ \ \ \ \_\_int64\ \mbox{\hyperlink{class_mugen_1_1_fraction_a16f75f6e28c9a18a66c1ce6b5eb9a4be}{Fraction::GetBottom}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00021}00021\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}};}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00024}\mbox{\hyperlink{class_mugen_1_1_fraction_a85514187040788699751eb827ed60a2e}{00024}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mugen_1_1_fraction_a85514187040788699751eb827ed60a2e}{Fraction::SetTop}}(\_\_int64\ top)}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}}\ =\ top;}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00028}\mbox{\hyperlink{class_mugen_1_1_fraction_ae6ecc82acc978acda044dec133dd38cf}{00028}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mugen_1_1_fraction_ae6ecc82acc978acda044dec133dd38cf}{Fraction::SetBottom}}(\_\_int64\ bottom)}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}}\ =\ bottom;}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00032}\mbox{\hyperlink{class_mugen_1_1_fraction_a9e6a04bf1e2ee7c5533f3f097b24ba51}{00032}}\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_mugen_1_1_fraction_a9e6a04bf1e2ee7c5533f3f097b24ba51}{Fraction::GetValue}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00033}00033\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0\ ==\ \mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}})}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}})\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}});}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00040}\mbox{\hyperlink{class_mugen_1_1_fraction_a34a2b26a35f3fb48f2ebcffe7e3558de}{00040}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mugen_1_1_fraction_a34a2b26a35f3fb48f2ebcffe7e3558de}{Fraction::Reduce}}()}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 分子か分母が0の時は何もしない}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0\ ==\ \mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}}\ ||\ 0\ ==\ \mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}})}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 分子と分母の最大公約数}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_\_int64\ gcd\ =\ std::gcd(\mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}},\ \mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}});}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 約分する}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}}\ /=\ gcd;}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}}\ /=\ gcd;}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00053}\mbox{\hyperlink{class_mugen_1_1_fraction_aea62d8b2464db036dd1d85891466f86b}{00053}}\ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ \mbox{\hyperlink{class_mugen_1_1_fraction_aea62d8b2464db036dd1d85891466f86b}{Fraction::operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 分母の最小公倍数}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_\_int64\ lcm\ =\ std::lcm(\mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}},\ rhs.\mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}});}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ それぞれ分母を最小公倍数で割った奴}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_\_int64\ divLhs\ =\ lcm\ /\ \mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}};}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_\_int64\ divRhs\ =\ lcm\ /\ rhs.\mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}};}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 純粋な足し算}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ retval(\mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}}\ *\ divLhs\ +\ rhs.\mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}}\ *\ divRhs,\ lcm);}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 約分して既約分数で返す}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ retval.\mbox{\hyperlink{class_mugen_1_1_fraction_a34a2b26a35f3fb48f2ebcffe7e3558de}{Reduce}}();}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00068}\mbox{\hyperlink{class_mugen_1_1_fraction_a7147788b6c2eb8100683e3235c6acc78}{00068}}\ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ \mbox{\hyperlink{class_mugen_1_1_fraction_a000987928a970d298d9409a96319a8b2}{Fraction::operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00069}00069\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 分母の最小公倍数}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_\_int64\ lcm\ =\ std::lcm(\mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}},\ rhs.\mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}});}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ それぞれ分母を最小公倍数で割った奴}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_\_int64\ divLhs\ =\ lcm\ /\ \mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}};}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_\_int64\ divRhs\ =\ lcm\ /\ rhs.\mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}};}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 純粋な引き算}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ retval(\mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}}\ *\ divLhs\ -\/\ rhs.\mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}}\ *\ divRhs,\ lcm);}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 約分して既約分数で返す}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ retval.\mbox{\hyperlink{class_mugen_1_1_fraction_a34a2b26a35f3fb48f2ebcffe7e3558de}{Reduce}}();}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00082}\mbox{\hyperlink{class_mugen_1_1_fraction_ac5ae564fc0b7faddebfc52963e00beb9}{00082}}\ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ \mbox{\hyperlink{class_mugen_1_1_fraction_ac5ae564fc0b7faddebfc52963e00beb9}{Fraction::operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00083}00083\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 純粋な引き算}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ retval(\mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}}\ *\ rhs.\mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}},\ \mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}}\ *\ rhs.\mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}});}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 約分して既約分数で返す}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ retval.\mbox{\hyperlink{class_mugen_1_1_fraction_a34a2b26a35f3fb48f2ebcffe7e3558de}{Reduce}}();}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00091}\mbox{\hyperlink{class_mugen_1_1_fraction_acd83b71357979852ac15dc231db42919}{00091}}\ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ \mbox{\hyperlink{class_mugen_1_1_fraction_acd83b71357979852ac15dc231db42919}{Fraction::operator/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00092}00092\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 純粋な引き算}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ retval(\mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}}\ *\ rhs.\mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}},\ \mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}}\ *\ rhs.\mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}});}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 約分して既約分数で返す}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ retval.\mbox{\hyperlink{class_mugen_1_1_fraction_a34a2b26a35f3fb48f2ebcffe7e3558de}{Reduce}}();}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00100}\mbox{\hyperlink{class_mugen_1_1_fraction_a000987928a970d298d9409a96319a8b2}{00100}}\ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ \mbox{\hyperlink{class_mugen_1_1_fraction_a000987928a970d298d9409a96319a8b2}{Fraction::operator-\/}}()}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00101}00101\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_mugen_1_1_fraction_a2b5719c4ecfdb5a43b3ff45807c9df06}{Fraction}}(-\/\mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}},\ \mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}});}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fraction_8cpp_source_l00104}00104\ \}}
+
+\end{DoxyCode}

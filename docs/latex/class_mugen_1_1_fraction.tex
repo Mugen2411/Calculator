@@ -1,0 +1,352 @@
+\doxysection{Mugen\+::Fraction クラス}
+\hypertarget{class_mugen_1_1_fraction}{}\label{class_mugen_1_1_fraction}\index{Mugen::Fraction@{Mugen::Fraction}}
+
+
+分数クラス  
+
+
+
+
+{\ttfamily \#include $<$Fraction.\+h$>$}
+
+\doxysubsubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mugen_1_1_fraction_a2b5719c4ecfdb5a43b3ff45807c9df06}{Fraction}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mugen_1_1_fraction_a3fd9a44c37c15b749aeeb4411cc0c40f}{Fraction}} (\+\_\+\+\_\+int64 top, \+\_\+\+\_\+int64 bottom)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mugen_1_1_fraction_a7cfd7c39cd77046e3af709d271b6ebc9}{\texorpdfstring{$\sim$}{\string~}\+Fraction}} ()=default
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+\+\_\+\+\_\+int64 \mbox{\hyperlink{class_mugen_1_1_fraction_ab31e26afa2ff329e5aa480d1137131f1}{Get\+Top}} () const
+\begin{DoxyCompactList}\small\item\em 分子を取得する \end{DoxyCompactList}\item 
+\+\_\+\+\_\+int64 \mbox{\hyperlink{class_mugen_1_1_fraction_a16f75f6e28c9a18a66c1ce6b5eb9a4be}{Get\+Bottom}} () const
+\begin{DoxyCompactList}\small\item\em 分母を取得する \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mugen_1_1_fraction_a85514187040788699751eb827ed60a2e}{Set\+Top}} (\+\_\+\+\_\+int64 top)
+\begin{DoxyCompactList}\small\item\em 分子を設定する \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mugen_1_1_fraction_ae6ecc82acc978acda044dec133dd38cf}{Set\+Bottom}} (\+\_\+\+\_\+int64 bottom)
+\begin{DoxyCompactList}\small\item\em 分母を設定する \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{class_mugen_1_1_fraction_a9e6a04bf1e2ee7c5533f3f097b24ba51}{Get\+Value}} () const
+\begin{DoxyCompactList}\small\item\em 値を実数値として取得する \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mugen_1_1_fraction_a34a2b26a35f3fb48f2ebcffe7e3558de}{Reduce}} ()
+\begin{DoxyCompactList}\small\item\em 約分する(分母が0の場合は何もしない) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \mbox{\hyperlink{class_mugen_1_1_fraction_aea62d8b2464db036dd1d85891466f86b}{operator+}} (const \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \&rhs)
+\begin{DoxyCompactList}\small\item\em 加算演算子 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \mbox{\hyperlink{class_mugen_1_1_fraction_a7147788b6c2eb8100683e3235c6acc78}{operator-\/}} (const \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \&rhs)
+\begin{DoxyCompactList}\small\item\em 減算演算子 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \mbox{\hyperlink{class_mugen_1_1_fraction_ac5ae564fc0b7faddebfc52963e00beb9}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \&rhs)
+\begin{DoxyCompactList}\small\item\em 乗算演算子 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \mbox{\hyperlink{class_mugen_1_1_fraction_acd83b71357979852ac15dc231db42919}{operator/}} (const \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \&rhs)
+\begin{DoxyCompactList}\small\item\em 除算演算子 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \mbox{\hyperlink{class_mugen_1_1_fraction_a000987928a970d298d9409a96319a8b2}{operator-\/}} ()
+\begin{DoxyCompactList}\small\item\em 単項減算演算子 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{非公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+int64 \mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\+\_\+top}}
+\begin{DoxyCompactList}\small\item\em 分子 \end{DoxyCompactList}\item 
+\+\_\+\+\_\+int64 \mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\+\_\+bottom}}
+\begin{DoxyCompactList}\small\item\em 分母 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+分数クラス 
+
+ \mbox{\hyperlink{_fraction_8h_source}{Fraction.\+h}} の \mbox{\hyperlink{_fraction_8h_source_l00009}{9}} 行目に定義があります。
+
+
+
+\doxysubsection{構築子と解体子}
+\Hypertarget{class_mugen_1_1_fraction_a2b5719c4ecfdb5a43b3ff45807c9df06}\label{class_mugen_1_1_fraction_a2b5719c4ecfdb5a43b3ff45807c9df06} 
+\index{Mugen::Fraction@{Mugen::Fraction}!Fraction@{Fraction}}
+\index{Fraction@{Fraction}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{Fraction()}{Fraction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Mugen\+::\+Fraction\+::\+Fraction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00006}{6}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_a3fd9a44c37c15b749aeeb4411cc0c40f}\label{class_mugen_1_1_fraction_a3fd9a44c37c15b749aeeb4411cc0c40f} 
+\index{Mugen::Fraction@{Mugen::Fraction}!Fraction@{Fraction}}
+\index{Fraction@{Fraction}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{Fraction()}{Fraction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mugen\+::\+Fraction\+::\+Fraction (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+int64}]{top,  }\item[{\+\_\+\+\_\+int64}]{bottom }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+{\em top} & 分子 \\
+\hline
+{\em bottom} & 分母 \\
+\hline
+\end{DoxyParams}
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00011}{11}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_a7cfd7c39cd77046e3af709d271b6ebc9}\label{class_mugen_1_1_fraction_a7cfd7c39cd77046e3af709d271b6ebc9} 
+\index{Mugen::Fraction@{Mugen::Fraction}!````~Fraction@{\texorpdfstring{$\sim$}{\string~}Fraction}}
+\index{````~Fraction@{\texorpdfstring{$\sim$}{\string~}Fraction}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Fraction()}{\string~Fraction()}}
+{\footnotesize\ttfamily Mugen\+::\+Fraction\+::\texorpdfstring{$\sim$}{\string~}\+Fraction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+デストラクタ 
+
+
+
+\doxysubsection{関数詳解}
+\Hypertarget{class_mugen_1_1_fraction_a16f75f6e28c9a18a66c1ce6b5eb9a4be}\label{class_mugen_1_1_fraction_a16f75f6e28c9a18a66c1ce6b5eb9a4be} 
+\index{Mugen::Fraction@{Mugen::Fraction}!GetBottom@{GetBottom}}
+\index{GetBottom@{GetBottom}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{GetBottom()}{GetBottom()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+int64 Mugen\+::\+Fraction\+::\+Get\+Bottom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+分母を取得する 
+
+\begin{DoxyReturn}{戻り値}
+分母 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00020}{20}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_ab31e26afa2ff329e5aa480d1137131f1}\label{class_mugen_1_1_fraction_ab31e26afa2ff329e5aa480d1137131f1} 
+\index{Mugen::Fraction@{Mugen::Fraction}!GetTop@{GetTop}}
+\index{GetTop@{GetTop}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{GetTop()}{GetTop()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+int64 Mugen\+::\+Fraction\+::\+Get\+Top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+分子を取得する 
+
+\begin{DoxyReturn}{戻り値}
+分子 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00016}{16}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_a9e6a04bf1e2ee7c5533f3f097b24ba51}\label{class_mugen_1_1_fraction_a9e6a04bf1e2ee7c5533f3f097b24ba51} 
+\index{Mugen::Fraction@{Mugen::Fraction}!GetValue@{GetValue}}
+\index{GetValue@{GetValue}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{GetValue()}{GetValue()}}
+{\footnotesize\ttfamily long double Mugen\+::\+Fraction\+::\+Get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+値を実数値として取得する 
+
+\begin{DoxyReturn}{戻り値}
+値 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00032}{32}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_ac5ae564fc0b7faddebfc52963e00beb9}\label{class_mugen_1_1_fraction_ac5ae564fc0b7faddebfc52963e00beb9} 
+\index{Mugen::Fraction@{Mugen::Fraction}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} Mugen\+::\+Fraction\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+乗算演算子 
+
+
+\begin{DoxyParams}{引数}
+{\em rhs} & 右辺 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+乗算した結果 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00082}{82}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_aea62d8b2464db036dd1d85891466f86b}\label{class_mugen_1_1_fraction_aea62d8b2464db036dd1d85891466f86b} 
+\index{Mugen::Fraction@{Mugen::Fraction}!operator+@{operator+}}
+\index{operator+@{operator+}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} Mugen\+::\+Fraction\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+加算演算子 
+
+
+\begin{DoxyParams}{引数}
+{\em rhs} & 右辺 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+加算した結果 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00053}{53}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_a000987928a970d298d9409a96319a8b2}\label{class_mugen_1_1_fraction_a000987928a970d298d9409a96319a8b2} 
+\index{Mugen::Fraction@{Mugen::Fraction}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} Mugen\+::\+Fraction\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+単項減算演算子 
+
+\begin{DoxyReturn}{戻り値}
+符号反転した結果 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00100}{100}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_a7147788b6c2eb8100683e3235c6acc78}\label{class_mugen_1_1_fraction_a7147788b6c2eb8100683e3235c6acc78} 
+\index{Mugen::Fraction@{Mugen::Fraction}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} Mugen\+::\+Fraction\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+減算演算子 
+
+
+\begin{DoxyParams}{引数}
+{\em rhs} & 右辺 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+減算した結果 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00068}{68}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_acd83b71357979852ac15dc231db42919}\label{class_mugen_1_1_fraction_acd83b71357979852ac15dc231db42919} 
+\index{Mugen::Fraction@{Mugen::Fraction}!operator/@{operator/}}
+\index{operator/@{operator/}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} Mugen\+::\+Fraction\+::operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+除算演算子 
+
+
+\begin{DoxyParams}{引数}
+{\em rhs} & 右辺 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+除算した結果 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00091}{91}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_a34a2b26a35f3fb48f2ebcffe7e3558de}\label{class_mugen_1_1_fraction_a34a2b26a35f3fb48f2ebcffe7e3558de} 
+\index{Mugen::Fraction@{Mugen::Fraction}!Reduce@{Reduce}}
+\index{Reduce@{Reduce}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{Reduce()}{Reduce()}}
+{\footnotesize\ttfamily void Mugen\+::\+Fraction\+::\+Reduce (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+約分する(分母が0の場合は何もしない) 
+
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00040}{40}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_ae6ecc82acc978acda044dec133dd38cf}\label{class_mugen_1_1_fraction_ae6ecc82acc978acda044dec133dd38cf} 
+\index{Mugen::Fraction@{Mugen::Fraction}!SetBottom@{SetBottom}}
+\index{SetBottom@{SetBottom}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{SetBottom()}{SetBottom()}}
+{\footnotesize\ttfamily void Mugen\+::\+Fraction\+::\+Set\+Bottom (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+int64}]{bottom }\end{DoxyParamCaption})}
+
+
+
+分母を設定する 
+
+
+\begin{DoxyParams}{引数}
+{\em bottom} & 分母 \\
+\hline
+\end{DoxyParams}
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00028}{28}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_a85514187040788699751eb827ed60a2e}\label{class_mugen_1_1_fraction_a85514187040788699751eb827ed60a2e} 
+\index{Mugen::Fraction@{Mugen::Fraction}!SetTop@{SetTop}}
+\index{SetTop@{SetTop}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{SetTop()}{SetTop()}}
+{\footnotesize\ttfamily void Mugen\+::\+Fraction\+::\+Set\+Top (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+int64}]{top }\end{DoxyParamCaption})}
+
+
+
+分子を設定する 
+
+
+\begin{DoxyParams}{引数}
+{\em top} & 分子 \\
+\hline
+\end{DoxyParams}
+
+
+ \mbox{\hyperlink{_fraction_8cpp_source}{Fraction.\+cpp}} の \mbox{\hyperlink{_fraction_8cpp_source_l00024}{24}} 行目に定義があります。
+
+
+
+\doxysubsection{メンバ詳解}
+\Hypertarget{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}\label{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2} 
+\index{Mugen::Fraction@{Mugen::Fraction}!m\_bottom@{m\_bottom}}
+\index{m\_bottom@{m\_bottom}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{m\_bottom}{m\_bottom}}
+{\footnotesize\ttfamily \+\_\+\+\_\+int64 Mugen\+::\+Fraction\+::m\+\_\+bottom\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+分母 
+
+
+
+ \mbox{\hyperlink{_fraction_8h_source}{Fraction.\+h}} の \mbox{\hyperlink{_fraction_8h_source_l00100}{100}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}\label{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7} 
+\index{Mugen::Fraction@{Mugen::Fraction}!m\_top@{m\_top}}
+\index{m\_top@{m\_top}!Mugen::Fraction@{Mugen::Fraction}}
+\doxysubsubsection{\texorpdfstring{m\_top}{m\_top}}
+{\footnotesize\ttfamily \+\_\+\+\_\+int64 Mugen\+::\+Fraction\+::m\+\_\+top\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+分子 
+
+
+
+ \mbox{\hyperlink{_fraction_8h_source}{Fraction.\+h}} の \mbox{\hyperlink{_fraction_8h_source_l00099}{99}} 行目に定義があります。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Calculator/header/\mbox{\hyperlink{_fraction_8h}{Fraction.\+h}}\item 
+Calculator/source/\mbox{\hyperlink{_fraction_8cpp}{Fraction.\+cpp}}\end{DoxyCompactItemize}

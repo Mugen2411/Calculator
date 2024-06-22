@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Calclator: Calculator/header/Calculator.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Calclator<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">String based Arithmetical Calclator</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.8 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="pages.html"><span>諸情報</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_fddfb7624d5bf86fa4de64f5b593c83e.html">Calculator</a></li><li class="navelem"><a class="el" href="dir_140b9261ffa405e0f24cbfd221650f17.html">header</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Calculator.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_calculator_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;<a class="code" href="_result_code_8h.html">ResultCode.h</a>&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="_t_o_k_e_n_8h.html">TOKEN.h</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespace_mugen.html">    8</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_mugen.html">Mugen</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">class </span><a class="code hl_class" href="class_mugen_1_1_fraction.html">Fraction</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_mugen.html">Mugen</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_mugen_1_1_calculator.html">   17</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_mugen_1_1_calculator.html">Calculator</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_class" href="class_mugen_1_1_calculator.html">Calculator</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pExpression, <span class="keywordtype">size_t</span> length);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#a7c147485f6e9325b1394674974399258">Calculate</a>(<a class="code hl_class" href="class_mugen_1_1_fraction.html">Fraction</a>&amp; result);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#ac3ad97c3c0fc0a9e8cd524fa680525c7">_ConvertToTokenList</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_mugen_1_1_calculator.html#a5bb8e05cbf47bf64d32829a1013f2995">forwardIndex</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#aa5fe77b478aed89697a25a30b5409ee4">_MakeNumberToken</a>(<a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a>&amp; token);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#a2ce2c52af67f03403db8cbbda3c8eb63">_MakeOperatorToken</a>(<a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a>&amp; token);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#a20552ba0143e5d1c65a87bd3bcfdc1e0">_MakeBrockToken</a>(<a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a>&amp; token);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#ab206dc6985b304bd42580903159663d2">_ConvertToReversePolish</a>();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#a56bc5e0d9c544af372467e5716087a9f">_ConvertOperatorToReversePolish</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a>&amp; current, std::stack&lt;TOKEN&gt;&amp; tokenStack);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#a0bbaa7a516f9603badb688635a78d891">_ConvertBlockEndToReversePolish</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a>&amp; current, std::stack&lt;TOKEN&gt;&amp; tokenStack);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#adb5516cbc7b07f36b7f3977f03b957e1">_CalclateReversePolish</a>(<a class="code hl_class" href="class_mugen_1_1_fraction.html">Fraction</a>&amp; ans);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#ac281a2038431498680ee5a4b770a9715">_ExtractUnaryOperator</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a>&amp; operatorToken, std::stack&lt;TOKEN&gt;&amp; stack);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#ab5cf086689b13a1007a84deb9db2a4ba">_ExtractBinaryOperator</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a>&amp; operatorToken, std::stack&lt;TOKEN&gt;&amp; stack);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#a1497e4c1ad4ce365ac044aada2dee5a9">_CalclateUnaryOperator</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a> operatorToken, <span class="keyword">const</span> <a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a>&amp; lhsToken, <a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a>&amp; ans);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <a class="code hl_enumeration" href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">ResultCode</a> <a class="code hl_function" href="class_mugen_1_1_calculator.html#a5d18d5aaa19bd18d165205d22514f93f">_CalclateBinaryOperator</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a> operatorToken, <span class="keyword">const</span> <a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a>&amp; lhsToken, <span class="keyword">const</span> <a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a>&amp; rhsToken, <a class="code hl_struct" href="struct_mugen_1_1_t_o_k_e_n.html">TOKEN</a>&amp; ans);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="class_mugen_1_1_calculator.html#ac300442e4b700373634ae3d59c8656c1">  132</a></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="class_mugen_1_1_calculator.html#ac300442e4b700373634ae3d59c8656c1">m_pExpression</a>;                  </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="class_mugen_1_1_calculator.html#a66fd5bfabddf8e16b55a681a8e416392">  133</a></span>        <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="class_mugen_1_1_calculator.html#a66fd5bfabddf8e16b55a681a8e416392">m_length</a>;                      </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="class_mugen_1_1_calculator.html#a2a89b187d27194c70352119c76609de8">  134</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_variable" href="class_mugen_1_1_calculator.html#a2a89b187d27194c70352119c76609de8">m_currentIndex</a>;                      </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="class_mugen_1_1_calculator.html#a59b788a6495432314618c4f4c6bb3b90">  135</a></span>        std::list&lt;TOKEN&gt; <a class="code hl_variable" href="class_mugen_1_1_calculator.html#a59b788a6495432314618c4f4c6bb3b90">m_tokenList</a>;               </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="class_mugen_1_1_calculator.html#a147b00872586259f060870a90a9cff86">  136</a></span>        std::queue&lt;TOKEN&gt; <a class="code hl_variable" href="class_mugen_1_1_calculator.html#a147b00872586259f060870a90a9cff86">m_reversePolish</a>;          </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    };</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
+<div class="ttc" id="a_result_code_8h_html"><div class="ttname"><a href="_result_code_8h.html">ResultCode.h</a></div></div>
+<div class="ttc" id="a_t_o_k_e_n_8h_html"><div class="ttname"><a href="_t_o_k_e_n_8h.html">TOKEN.h</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html"><div class="ttname"><a href="class_mugen_1_1_calculator.html">Mugen::Calculator</a></div><div class="ttdoc">計算機本体</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8h_source.html#l00017">Calculator.h:18</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_a0bbaa7a516f9603badb688635a78d891"><div class="ttname"><a href="class_mugen_1_1_calculator.html#a0bbaa7a516f9603badb688635a78d891">Mugen::Calculator::_ConvertBlockEndToReversePolish</a></div><div class="ttdeci">ResultCode _ConvertBlockEndToReversePolish(const TOKEN &amp;current, std::stack&lt; TOKEN &gt; &amp;tokenStack)</div><div class="ttdoc">括弧の終わりを逆ポーランド記法に並べ替える</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00312">Calculator.cpp:312</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_a147b00872586259f060870a90a9cff86"><div class="ttname"><a href="class_mugen_1_1_calculator.html#a147b00872586259f060870a90a9cff86">Mugen::Calculator::m_reversePolish</a></div><div class="ttdeci">std::queue&lt; TOKEN &gt; m_reversePolish</div><div class="ttdoc">トークンを逆ポーランド記法の順に格納するキュー</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8h_source.html#l00136">Calculator.h:136</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_a1497e4c1ad4ce365ac044aada2dee5a9"><div class="ttname"><a href="class_mugen_1_1_calculator.html#a1497e4c1ad4ce365ac044aada2dee5a9">Mugen::Calculator::_CalclateUnaryOperator</a></div><div class="ttdeci">ResultCode _CalclateUnaryOperator(const TOKEN operatorToken, const TOKEN &amp;lhsToken, TOKEN &amp;ans)</div><div class="ttdoc">単項演算子の計算</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00410">Calculator.cpp:410</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_a20552ba0143e5d1c65a87bd3bcfdc1e0"><div class="ttname"><a href="class_mugen_1_1_calculator.html#a20552ba0143e5d1c65a87bd3bcfdc1e0">Mugen::Calculator::_MakeBrockToken</a></div><div class="ttdeci">ResultCode _MakeBrockToken(TOKEN &amp;token)</div><div class="ttdoc">式から括弧トークンを取り出す</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00220">Calculator.cpp:220</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_a2a89b187d27194c70352119c76609de8"><div class="ttname"><a href="class_mugen_1_1_calculator.html#a2a89b187d27194c70352119c76609de8">Mugen::Calculator::m_currentIndex</a></div><div class="ttdeci">size_t m_currentIndex</div><div class="ttdoc">現在参照している位置</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8h_source.html#l00134">Calculator.h:134</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_a2ce2c52af67f03403db8cbbda3c8eb63"><div class="ttname"><a href="class_mugen_1_1_calculator.html#a2ce2c52af67f03403db8cbbda3c8eb63">Mugen::Calculator::_MakeOperatorToken</a></div><div class="ttdeci">ResultCode _MakeOperatorToken(TOKEN &amp;token)</div><div class="ttdoc">式から演算子トークンを取り出す</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00169">Calculator.cpp:169</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_a56bc5e0d9c544af372467e5716087a9f"><div class="ttname"><a href="class_mugen_1_1_calculator.html#a56bc5e0d9c544af372467e5716087a9f">Mugen::Calculator::_ConvertOperatorToReversePolish</a></div><div class="ttdeci">ResultCode _ConvertOperatorToReversePolish(const TOKEN &amp;current, std::stack&lt; TOKEN &gt; &amp;tokenStack)</div><div class="ttdoc">演算子を逆ポーランド記法に並べ替える</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00287">Calculator.cpp:287</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_a59b788a6495432314618c4f4c6bb3b90"><div class="ttname"><a href="class_mugen_1_1_calculator.html#a59b788a6495432314618c4f4c6bb3b90">Mugen::Calculator::m_tokenList</a></div><div class="ttdeci">std::list&lt; TOKEN &gt; m_tokenList</div><div class="ttdoc">トークンを入力順に格納するリスト</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8h_source.html#l00135">Calculator.h:135</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_a5bb8e05cbf47bf64d32829a1013f2995"><div class="ttname"><a href="class_mugen_1_1_calculator.html#a5bb8e05cbf47bf64d32829a1013f2995">Mugen::Calculator::forwardIndex</a></div><div class="ttdeci">bool forwardIndex()</div><div class="ttdoc">インデックスを前に進める</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00089">Calculator.cpp:89</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_a5d18d5aaa19bd18d165205d22514f93f"><div class="ttname"><a href="class_mugen_1_1_calculator.html#a5d18d5aaa19bd18d165205d22514f93f">Mugen::Calculator::_CalclateBinaryOperator</a></div><div class="ttdeci">ResultCode _CalclateBinaryOperator(const TOKEN operatorToken, const TOKEN &amp;lhsToken, const TOKEN &amp;rhsToken, TOKEN &amp;ans)</div><div class="ttdoc">二項演算子の計算</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00431">Calculator.cpp:431</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_a66fd5bfabddf8e16b55a681a8e416392"><div class="ttname"><a href="class_mugen_1_1_calculator.html#a66fd5bfabddf8e16b55a681a8e416392">Mugen::Calculator::m_length</a></div><div class="ttdeci">const size_t m_length</div><div class="ttdoc">式の長さ</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8h_source.html#l00133">Calculator.h:133</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_a7c147485f6e9325b1394674974399258"><div class="ttname"><a href="class_mugen_1_1_calculator.html#a7c147485f6e9325b1394674974399258">Mugen::Calculator::Calculate</a></div><div class="ttdeci">ResultCode Calculate(Fraction &amp;result)</div><div class="ttdoc">計算を実行する</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00014">Calculator.cpp:14</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_aa5fe77b478aed89697a25a30b5409ee4"><div class="ttname"><a href="class_mugen_1_1_calculator.html#aa5fe77b478aed89697a25a30b5409ee4">Mugen::Calculator::_MakeNumberToken</a></div><div class="ttdeci">ResultCode _MakeNumberToken(TOKEN &amp;token)</div><div class="ttdoc">式から数値トークンを取り出す</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00110">Calculator.cpp:110</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_ab206dc6985b304bd42580903159663d2"><div class="ttname"><a href="class_mugen_1_1_calculator.html#ab206dc6985b304bd42580903159663d2">Mugen::Calculator::_ConvertToReversePolish</a></div><div class="ttdeci">ResultCode _ConvertToReversePolish()</div><div class="ttdoc">逆ポーランド記法に並べ替える</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00236">Calculator.cpp:236</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_ab5cf086689b13a1007a84deb9db2a4ba"><div class="ttname"><a href="class_mugen_1_1_calculator.html#ab5cf086689b13a1007a84deb9db2a4ba">Mugen::Calculator::_ExtractBinaryOperator</a></div><div class="ttdeci">ResultCode _ExtractBinaryOperator(const TOKEN &amp;operatorToken, std::stack&lt; TOKEN &gt; &amp;stack)</div><div class="ttdoc">逆ポーランド記法に並べ替えられた式から二項演算子を抽出する</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00389">Calculator.cpp:389</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_ac281a2038431498680ee5a4b770a9715"><div class="ttname"><a href="class_mugen_1_1_calculator.html#ac281a2038431498680ee5a4b770a9715">Mugen::Calculator::_ExtractUnaryOperator</a></div><div class="ttdeci">ResultCode _ExtractUnaryOperator(const TOKEN &amp;operatorToken, std::stack&lt; TOKEN &gt; &amp;stack)</div><div class="ttdoc">逆ポーランド記法に並べ替えられた式から単項演算子を抽出する</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00370">Calculator.cpp:370</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_ac300442e4b700373634ae3d59c8656c1"><div class="ttname"><a href="class_mugen_1_1_calculator.html#ac300442e4b700373634ae3d59c8656c1">Mugen::Calculator::m_pExpression</a></div><div class="ttdeci">const char * m_pExpression</div><div class="ttdoc">式</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8h_source.html#l00132">Calculator.h:132</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_ac3ad97c3c0fc0a9e8cd524fa680525c7"><div class="ttname"><a href="class_mugen_1_1_calculator.html#ac3ad97c3c0fc0a9e8cd524fa680525c7">Mugen::Calculator::_ConvertToTokenList</a></div><div class="ttdeci">ResultCode _ConvertToTokenList()</div><div class="ttdoc">式からトークンに分解する</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00045">Calculator.cpp:45</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_calculator_html_adb5516cbc7b07f36b7f3977f03b957e1"><div class="ttname"><a href="class_mugen_1_1_calculator.html#adb5516cbc7b07f36b7f3977f03b957e1">Mugen::Calculator::_CalclateReversePolish</a></div><div class="ttdeci">ResultCode _CalclateReversePolish(Fraction &amp;ans)</div><div class="ttdoc">逆ポーランド記法に並べ替えた式を計算する</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00333">Calculator.cpp:333</a></div></div>
+<div class="ttc" id="aclass_mugen_1_1_fraction_html"><div class="ttname"><a href="class_mugen_1_1_fraction.html">Mugen::Fraction</a></div><div class="ttdoc">分数クラス</div><div class="ttdef"><b>Definition</b> <a href="_fraction_8h_source.html#l00009">Fraction.h:10</a></div></div>
+<div class="ttc" id="anamespace_mugen_html"><div class="ttname"><a href="namespace_mugen.html">Mugen</a></div><div class="ttdef"><b>Definition</b> <a href="_calculator_8h_source.html#l00008">Calculator.h:9</a></div></div>
+<div class="ttc" id="anamespace_mugen_html_a64edda6256e46434f145e70d3e46c038"><div class="ttname"><a href="namespace_mugen.html#a64edda6256e46434f145e70d3e46c038">Mugen::ResultCode</a></div><div class="ttdeci">ResultCode</div><div class="ttdoc">リザルトコード</div><div class="ttdef"><b>Definition</b> <a href="_result_code_8h_source.html#l00008">ResultCode.h:9</a></div></div>
+<div class="ttc" id="astruct_mugen_1_1_t_o_k_e_n_html"><div class="ttname"><a href="struct_mugen_1_1_t_o_k_e_n.html">Mugen::TOKEN</a></div><div class="ttdoc">式を分解したトークン</div><div class="ttdef"><b>Definition</b> <a href="_t_o_k_e_n_8h_source.html#l00030">TOKEN.h:31</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

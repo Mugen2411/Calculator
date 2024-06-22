@@ -1,0 +1,51 @@
+\doxysection{main.\+cpp}
+\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\index{Test/source/main.cpp@{Test/source/main.cpp}}
+\mbox{\hyperlink{main_8cpp}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_fraction_8h}{Fraction.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_calculator_8h}{Calculator.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#pragma\ comment(lib,\ "{}Calculator.lib"{})}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespace_mugen}{Mugen}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}\mbox{\hyperlink{main_8cpp_aed45a8fb131e2b132148dfb846130b79}{00010}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8cpp_aed45a8fb131e2b132148dfb846130b79}{TestCalclator}}(std::string\ expression)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_calculator}{Calculator}}\ calc(expression.c\_str(),\ expression.size());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ ans\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ result\ =\ calc.\mbox{\hyperlink{class_mugen_1_1_calculator_a7c147485f6e9325b1394674974399258}{Calculate}}(ans);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ \ \ \ \ std::cout\ <<\ expression\ <<\ \textcolor{stringliteral}{"{}\ =\ "{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{switch}\ (result)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038a505a83f220c02df2f85c3810cd9ceb38}{Mugen::ResultCode::Success}}:}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ std::cout\ <<\ ans.\mbox{\hyperlink{class_mugen_1_1_fraction_a9e6a04bf1e2ee7c5533f3f097b24ba51}{GetValue}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038aece592fd242f4ba674cc9da539a625a7}{Mugen::ResultCode::SyntaxError}}:}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}syntax\ error!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038a9fba64e5c39d0974981a417168beb6b2}{Mugen::ResultCode::DivideByZero}}:}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}divide\ by\ zero!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}unknown\ error!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00033}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{main_8cpp_aed45a8fb131e2b132148dfb846130b79}{TestCalclator}}(\textcolor{stringliteral}{"{}3.4\ -\/\ 4.8\ *\ 5.0\ /\ (6.2\ +\ 3.8)"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{main_8cpp_aed45a8fb131e2b132148dfb846130b79}{TestCalclator}}(\textcolor{stringliteral}{"{}4.0\ /\ 0.0"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{main_8cpp_aed45a8fb131e2b132148dfb846130b79}{TestCalclator}}(\textcolor{stringliteral}{"{}-\/3.0*-\/12.0"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{main_8cpp_aed45a8fb131e2b132148dfb846130b79}{TestCalclator}}(\textcolor{stringliteral}{"{}(1.25\ *\ 8)\ \ +\ 2"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{main_8cpp_aed45a8fb131e2b132148dfb846130b79}{TestCalclator}}(\textcolor{stringliteral}{"{}-\/(0.3125\ *\ 16)\ \ -\/\ 2"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{main_8cpp_aed45a8fb131e2b132148dfb846130b79}{TestCalclator}}(\textcolor{stringliteral}{"{}(5/6)\ *\ (3/2)\ *\ (4/5)"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{main_8cpp_aed45a8fb131e2b132148dfb846130b79}{TestCalclator}}(\textcolor{stringliteral}{"{}(((((1)+2)+3)+4)+5)"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{main_8cpp_aed45a8fb131e2b132148dfb846130b79}{TestCalclator}}(\textcolor{stringliteral}{"{}(((((1)+2)+3)+4)+5"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{main_8cpp_aed45a8fb131e2b132148dfb846130b79}{TestCalclator}}(\textcolor{stringliteral}{"{}((((1)+2)+3)+4)+5)"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \}}
+
+\end{DoxyCode}

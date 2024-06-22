@@ -1,0 +1,488 @@
+\doxysection{Mugen\+::Calculator クラス}
+\hypertarget{class_mugen_1_1_calculator}{}\label{class_mugen_1_1_calculator}\index{Mugen::Calculator@{Mugen::Calculator}}
+
+
+計算機本体  
+
+
+
+
+{\ttfamily \#include $<$Calculator.\+h$>$}
+
+\doxysubsubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mugen_1_1_calculator_a5c230bd81caa78a704c9c097561e7c5a}{Calculator}} (const char \texorpdfstring{$\ast$}{*}p\+Expression, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_a7c147485f6e9325b1394674974399258}{Calculate}} (\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \&result)
+\begin{DoxyCompactList}\small\item\em 計算を実行する \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{非公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_ac3ad97c3c0fc0a9e8cd524fa680525c7}{\+\_\+\+Convert\+To\+Token\+List}} ()
+\begin{DoxyCompactList}\small\item\em 式からトークンに分解する \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mugen_1_1_calculator_a5bb8e05cbf47bf64d32829a1013f2995}{forward\+Index}} ()
+\begin{DoxyCompactList}\small\item\em インデックスを前に進める \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_aa5fe77b478aed89697a25a30b5409ee4}{\+\_\+\+Make\+Number\+Token}} (\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&token)
+\begin{DoxyCompactList}\small\item\em 式から数値トークンを取り出す \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_a2ce2c52af67f03403db8cbbda3c8eb63}{\+\_\+\+Make\+Operator\+Token}} (\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&token)
+\begin{DoxyCompactList}\small\item\em 式から演算子トークンを取り出す \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_a20552ba0143e5d1c65a87bd3bcfdc1e0}{\+\_\+\+Make\+Brock\+Token}} (\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&token)
+\begin{DoxyCompactList}\small\item\em 式から括弧トークンを取り出す \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_ab206dc6985b304bd42580903159663d2}{\+\_\+\+Convert\+To\+Reverse\+Polish}} ()
+\begin{DoxyCompactList}\small\item\em 逆ポーランド記法に並べ替える \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_a56bc5e0d9c544af372467e5716087a9f}{\+\_\+\+Convert\+Operator\+To\+Reverse\+Polish}} (const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&current, std\+::stack$<$ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} $>$ \&token\+Stack)
+\begin{DoxyCompactList}\small\item\em 演算子を逆ポーランド記法に並べ替える \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_a0bbaa7a516f9603badb688635a78d891}{\+\_\+\+Convert\+Block\+End\+To\+Reverse\+Polish}} (const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&current, std\+::stack$<$ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} $>$ \&token\+Stack)
+\begin{DoxyCompactList}\small\item\em 括弧の終わりを逆ポーランド記法に並べ替える \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_adb5516cbc7b07f36b7f3977f03b957e1}{\+\_\+\+Calclate\+Reverse\+Polish}} (\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \&ans)
+\begin{DoxyCompactList}\small\item\em 逆ポーランド記法に並べ替えた式を計算する \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_ac281a2038431498680ee5a4b770a9715}{\+\_\+\+Extract\+Unary\+Operator}} (const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&operator\+Token, std\+::stack$<$ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} $>$ \&stack)
+\begin{DoxyCompactList}\small\item\em 逆ポーランド記法に並べ替えられた式から単項演算子を抽出する \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_ab5cf086689b13a1007a84deb9db2a4ba}{\+\_\+\+Extract\+Binary\+Operator}} (const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&operator\+Token, std\+::stack$<$ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} $>$ \&stack)
+\begin{DoxyCompactList}\small\item\em 逆ポーランド記法に並べ替えられた式から二項演算子を抽出する \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_a1497e4c1ad4ce365ac044aada2dee5a9}{\+\_\+\+Calclate\+Unary\+Operator}} (const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} operator\+Token, const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&lhs\+Token, \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&ans)
+\begin{DoxyCompactList}\small\item\em 単項演算子の計算 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \mbox{\hyperlink{class_mugen_1_1_calculator_a5d18d5aaa19bd18d165205d22514f93f}{\+\_\+\+Calclate\+Binary\+Operator}} (const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} operator\+Token, const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&lhs\+Token, const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&rhs\+Token, \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&ans)
+\begin{DoxyCompactList}\small\item\em 二項演算子の計算 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{非公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_mugen_1_1_calculator_ac300442e4b700373634ae3d59c8656c1}{m\+\_\+p\+Expression}}
+\begin{DoxyCompactList}\small\item\em 式 \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{class_mugen_1_1_calculator_a66fd5bfabddf8e16b55a681a8e416392}{m\+\_\+length}}
+\begin{DoxyCompactList}\small\item\em 式の長さ \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_mugen_1_1_calculator_a2a89b187d27194c70352119c76609de8}{m\+\_\+current\+Index}}
+\begin{DoxyCompactList}\small\item\em 現在参照している位置 \end{DoxyCompactList}\item 
+std\+::list$<$ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} $>$ \mbox{\hyperlink{class_mugen_1_1_calculator_a59b788a6495432314618c4f4c6bb3b90}{m\+\_\+token\+List}}
+\begin{DoxyCompactList}\small\item\em トークンを入力順に格納するリスト \end{DoxyCompactList}\item 
+std\+::queue$<$ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} $>$ \mbox{\hyperlink{class_mugen_1_1_calculator_a147b00872586259f060870a90a9cff86}{m\+\_\+reverse\+Polish}}
+\begin{DoxyCompactList}\small\item\em トークンを逆ポーランド記法の順に格納するキュー \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+計算機本体 
+
+ \mbox{\hyperlink{_calculator_8h_source}{Calculator.\+h}} の \mbox{\hyperlink{_calculator_8h_source_l00017}{17}} 行目に定義があります。
+
+
+
+\doxysubsection{構築子と解体子}
+\Hypertarget{class_mugen_1_1_calculator_a5c230bd81caa78a704c9c097561e7c5a}\label{class_mugen_1_1_calculator_a5c230bd81caa78a704c9c097561e7c5a} 
+\index{Mugen::Calculator@{Mugen::Calculator}!Calculator@{Calculator}}
+\index{Calculator@{Calculator}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{Calculator()}{Calculator()}}
+{\footnotesize\ttfamily Mugen\+::\+Calculator\+::\+Calculator (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+Expression,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+{\em p\+Expression} & 式 \\
+\hline
+{\em length} & 式の文字数 \\
+\hline
+\end{DoxyParams}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00007}{7}} 行目に定義があります。
+
+
+
+\doxysubsection{関数詳解}
+\Hypertarget{class_mugen_1_1_calculator_a5d18d5aaa19bd18d165205d22514f93f}\label{class_mugen_1_1_calculator_a5d18d5aaa19bd18d165205d22514f93f} 
+\index{Mugen::Calculator@{Mugen::Calculator}!\_CalclateBinaryOperator@{\_CalclateBinaryOperator}}
+\index{\_CalclateBinaryOperator@{\_CalclateBinaryOperator}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{\_CalclateBinaryOperator()}{\_CalclateBinaryOperator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+\_\+\+Calclate\+Binary\+Operator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}}]{operator\+Token,  }\item[{const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&}]{lhs\+Token,  }\item[{const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&}]{rhs\+Token,  }\item[{\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&}]{ans }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+二項演算子の計算 
+
+
+\begin{DoxyParams}{引数}
+{\em operator\+Token} & 演算子 \\
+\hline
+{\em lhs\+Token} & 左辺 \\
+\hline
+{\em rhs\+Token} & 右辺 \\
+\hline
+{\em ans} & 答えを出力する変数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00431}{431}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_adb5516cbc7b07f36b7f3977f03b957e1}\label{class_mugen_1_1_calculator_adb5516cbc7b07f36b7f3977f03b957e1} 
+\index{Mugen::Calculator@{Mugen::Calculator}!\_CalclateReversePolish@{\_CalclateReversePolish}}
+\index{\_CalclateReversePolish@{\_CalclateReversePolish}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{\_CalclateReversePolish()}{\_CalclateReversePolish()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+\_\+\+Calclate\+Reverse\+Polish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \&}]{ans }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+逆ポーランド記法に並べ替えた式を計算する 
+
+
+\begin{DoxyParams}{引数}
+{\em ans} & 答えを格納する出力変数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00333}{333}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_a1497e4c1ad4ce365ac044aada2dee5a9}\label{class_mugen_1_1_calculator_a1497e4c1ad4ce365ac044aada2dee5a9} 
+\index{Mugen::Calculator@{Mugen::Calculator}!\_CalclateUnaryOperator@{\_CalclateUnaryOperator}}
+\index{\_CalclateUnaryOperator@{\_CalclateUnaryOperator}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{\_CalclateUnaryOperator()}{\_CalclateUnaryOperator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+\_\+\+Calclate\+Unary\+Operator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}}]{operator\+Token,  }\item[{const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&}]{lhs\+Token,  }\item[{\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&}]{ans }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+単項演算子の計算 
+
+
+\begin{DoxyParams}{引数}
+{\em operator\+Token} & 演算子 \\
+\hline
+{\em lhs\+Token} & 左辺 \\
+\hline
+{\em ans} & 答えを出力する変数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00410}{410}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_a0bbaa7a516f9603badb688635a78d891}\label{class_mugen_1_1_calculator_a0bbaa7a516f9603badb688635a78d891} 
+\index{Mugen::Calculator@{Mugen::Calculator}!\_ConvertBlockEndToReversePolish@{\_ConvertBlockEndToReversePolish}}
+\index{\_ConvertBlockEndToReversePolish@{\_ConvertBlockEndToReversePolish}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{\_ConvertBlockEndToReversePolish()}{\_ConvertBlockEndToReversePolish()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+\_\+\+Convert\+Block\+End\+To\+Reverse\+Polish (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&}]{current,  }\item[{std\+::stack$<$ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} $>$ \&}]{token\+Stack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+括弧の終わりを逆ポーランド記法に並べ替える 
+
+
+\begin{DoxyParams}{引数}
+{\em current} & 現在引いているトークン \\
+\hline
+{\em token\+Stack} & 演算子を溜めているスタック \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00312}{312}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_a56bc5e0d9c544af372467e5716087a9f}\label{class_mugen_1_1_calculator_a56bc5e0d9c544af372467e5716087a9f} 
+\index{Mugen::Calculator@{Mugen::Calculator}!\_ConvertOperatorToReversePolish@{\_ConvertOperatorToReversePolish}}
+\index{\_ConvertOperatorToReversePolish@{\_ConvertOperatorToReversePolish}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{\_ConvertOperatorToReversePolish()}{\_ConvertOperatorToReversePolish()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+\_\+\+Convert\+Operator\+To\+Reverse\+Polish (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&}]{current,  }\item[{std\+::stack$<$ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} $>$ \&}]{token\+Stack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+演算子を逆ポーランド記法に並べ替える 
+
+
+\begin{DoxyParams}{引数}
+{\em current} & 現在引いているトークン \\
+\hline
+{\em token\+Stack} & 演算子を溜めているスタック \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00287}{287}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_ab206dc6985b304bd42580903159663d2}\label{class_mugen_1_1_calculator_ab206dc6985b304bd42580903159663d2} 
+\index{Mugen::Calculator@{Mugen::Calculator}!\_ConvertToReversePolish@{\_ConvertToReversePolish}}
+\index{\_ConvertToReversePolish@{\_ConvertToReversePolish}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{\_ConvertToReversePolish()}{\_ConvertToReversePolish()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+\_\+\+Convert\+To\+Reverse\+Polish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+逆ポーランド記法に並べ替える 
+
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00236}{236}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_ac3ad97c3c0fc0a9e8cd524fa680525c7}\label{class_mugen_1_1_calculator_ac3ad97c3c0fc0a9e8cd524fa680525c7} 
+\index{Mugen::Calculator@{Mugen::Calculator}!\_ConvertToTokenList@{\_ConvertToTokenList}}
+\index{\_ConvertToTokenList@{\_ConvertToTokenList}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{\_ConvertToTokenList()}{\_ConvertToTokenList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+\_\+\+Convert\+To\+Token\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+式からトークンに分解する 
+
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00045}{45}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_ab5cf086689b13a1007a84deb9db2a4ba}\label{class_mugen_1_1_calculator_ab5cf086689b13a1007a84deb9db2a4ba} 
+\index{Mugen::Calculator@{Mugen::Calculator}!\_ExtractBinaryOperator@{\_ExtractBinaryOperator}}
+\index{\_ExtractBinaryOperator@{\_ExtractBinaryOperator}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{\_ExtractBinaryOperator()}{\_ExtractBinaryOperator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+\_\+\+Extract\+Binary\+Operator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&}]{operator\+Token,  }\item[{std\+::stack$<$ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} $>$ \&}]{stack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+逆ポーランド記法に並べ替えられた式から二項演算子を抽出する 
+
+
+\begin{DoxyParams}{引数}
+{\em operator\+Token} & 演算子 \\
+\hline
+{\em stack} & 処理待ちトークンが積まれたスタック \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00389}{389}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_ac281a2038431498680ee5a4b770a9715}\label{class_mugen_1_1_calculator_ac281a2038431498680ee5a4b770a9715} 
+\index{Mugen::Calculator@{Mugen::Calculator}!\_ExtractUnaryOperator@{\_ExtractUnaryOperator}}
+\index{\_ExtractUnaryOperator@{\_ExtractUnaryOperator}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{\_ExtractUnaryOperator()}{\_ExtractUnaryOperator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+\_\+\+Extract\+Unary\+Operator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&}]{operator\+Token,  }\item[{std\+::stack$<$ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} $>$ \&}]{stack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+逆ポーランド記法に並べ替えられた式から単項演算子を抽出する 
+
+
+\begin{DoxyParams}{引数}
+{\em operator\+Token} & 演算子 \\
+\hline
+{\em stack} & 処理待ちトークンが積まれたスタック \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00370}{370}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_a20552ba0143e5d1c65a87bd3bcfdc1e0}\label{class_mugen_1_1_calculator_a20552ba0143e5d1c65a87bd3bcfdc1e0} 
+\index{Mugen::Calculator@{Mugen::Calculator}!\_MakeBrockToken@{\_MakeBrockToken}}
+\index{\_MakeBrockToken@{\_MakeBrockToken}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{\_MakeBrockToken()}{\_MakeBrockToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+\_\+\+Make\+Brock\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+式から括弧トークンを取り出す 
+
+
+\begin{DoxyParams}{引数}
+{\em token} & トークンの出力変数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00220}{220}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_aa5fe77b478aed89697a25a30b5409ee4}\label{class_mugen_1_1_calculator_aa5fe77b478aed89697a25a30b5409ee4} 
+\index{Mugen::Calculator@{Mugen::Calculator}!\_MakeNumberToken@{\_MakeNumberToken}}
+\index{\_MakeNumberToken@{\_MakeNumberToken}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{\_MakeNumberToken()}{\_MakeNumberToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+\_\+\+Make\+Number\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+式から数値トークンを取り出す 
+
+
+\begin{DoxyParams}{引数}
+{\em token} & トークンの出力変数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00110}{110}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_a2ce2c52af67f03403db8cbbda3c8eb63}\label{class_mugen_1_1_calculator_a2ce2c52af67f03403db8cbbda3c8eb63} 
+\index{Mugen::Calculator@{Mugen::Calculator}!\_MakeOperatorToken@{\_MakeOperatorToken}}
+\index{\_MakeOperatorToken@{\_MakeOperatorToken}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{\_MakeOperatorToken()}{\_MakeOperatorToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+\_\+\+Make\+Operator\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}} \&}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+式から演算子トークンを取り出す 
+
+
+\begin{DoxyParams}{引数}
+{\em token} & トークンの出力変数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00169}{169}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_a7c147485f6e9325b1394674974399258}\label{class_mugen_1_1_calculator_a7c147485f6e9325b1394674974399258} 
+\index{Mugen::Calculator@{Mugen::Calculator}!Calculate@{Calculate}}
+\index{Calculate@{Calculate}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{Calculate()}{Calculate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} Mugen\+::\+Calculator\+::\+Calculate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \&}]{result }\end{DoxyParamCaption})}
+
+
+
+計算を実行する 
+
+
+\begin{DoxyParams}{引数}
+{\em result} & 計算結果の値 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リザルトコード 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00014}{14}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_a5bb8e05cbf47bf64d32829a1013f2995}\label{class_mugen_1_1_calculator_a5bb8e05cbf47bf64d32829a1013f2995} 
+\index{Mugen::Calculator@{Mugen::Calculator}!forwardIndex@{forwardIndex}}
+\index{forwardIndex@{forwardIndex}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{forwardIndex()}{forwardIndex()}}
+{\footnotesize\ttfamily bool Mugen\+::\+Calculator\+::forward\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+インデックスを前に進める 
+
+
+\begin{DoxyRetVals}{戻り値}
+{\em true} & 異常なし \\
+\hline
+{\em false} & 式の最後の文字に到達した \\
+\hline
+\end{DoxyRetVals}
+
+
+ \mbox{\hyperlink{_calculator_8cpp_source}{Calculator.\+cpp}} の \mbox{\hyperlink{_calculator_8cpp_source_l00089}{89}} 行目に定義があります。
+
+
+
+\doxysubsection{メンバ詳解}
+\Hypertarget{class_mugen_1_1_calculator_a2a89b187d27194c70352119c76609de8}\label{class_mugen_1_1_calculator_a2a89b187d27194c70352119c76609de8} 
+\index{Mugen::Calculator@{Mugen::Calculator}!m\_currentIndex@{m\_currentIndex}}
+\index{m\_currentIndex@{m\_currentIndex}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{m\_currentIndex}{m\_currentIndex}}
+{\footnotesize\ttfamily size\+\_\+t Mugen\+::\+Calculator\+::m\+\_\+current\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+現在参照している位置 
+
+
+
+ \mbox{\hyperlink{_calculator_8h_source}{Calculator.\+h}} の \mbox{\hyperlink{_calculator_8h_source_l00134}{134}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_a66fd5bfabddf8e16b55a681a8e416392}\label{class_mugen_1_1_calculator_a66fd5bfabddf8e16b55a681a8e416392} 
+\index{Mugen::Calculator@{Mugen::Calculator}!m\_length@{m\_length}}
+\index{m\_length@{m\_length}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{m\_length}{m\_length}}
+{\footnotesize\ttfamily const size\+\_\+t Mugen\+::\+Calculator\+::m\+\_\+length\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+式の長さ 
+
+
+
+ \mbox{\hyperlink{_calculator_8h_source}{Calculator.\+h}} の \mbox{\hyperlink{_calculator_8h_source_l00133}{133}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_ac300442e4b700373634ae3d59c8656c1}\label{class_mugen_1_1_calculator_ac300442e4b700373634ae3d59c8656c1} 
+\index{Mugen::Calculator@{Mugen::Calculator}!m\_pExpression@{m\_pExpression}}
+\index{m\_pExpression@{m\_pExpression}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{m\_pExpression}{m\_pExpression}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} Mugen\+::\+Calculator\+::m\+\_\+p\+Expression\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+式 
+
+
+
+ \mbox{\hyperlink{_calculator_8h_source}{Calculator.\+h}} の \mbox{\hyperlink{_calculator_8h_source_l00132}{132}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_a147b00872586259f060870a90a9cff86}\label{class_mugen_1_1_calculator_a147b00872586259f060870a90a9cff86} 
+\index{Mugen::Calculator@{Mugen::Calculator}!m\_reversePolish@{m\_reversePolish}}
+\index{m\_reversePolish@{m\_reversePolish}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{m\_reversePolish}{m\_reversePolish}}
+{\footnotesize\ttfamily std\+::queue$<$\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}$>$ Mugen\+::\+Calculator\+::m\+\_\+reverse\+Polish\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+トークンを逆ポーランド記法の順に格納するキュー 
+
+
+
+ \mbox{\hyperlink{_calculator_8h_source}{Calculator.\+h}} の \mbox{\hyperlink{_calculator_8h_source_l00136}{136}} 行目に定義があります。
+
+\Hypertarget{class_mugen_1_1_calculator_a59b788a6495432314618c4f4c6bb3b90}\label{class_mugen_1_1_calculator_a59b788a6495432314618c4f4c6bb3b90} 
+\index{Mugen::Calculator@{Mugen::Calculator}!m\_tokenList@{m\_tokenList}}
+\index{m\_tokenList@{m\_tokenList}!Mugen::Calculator@{Mugen::Calculator}}
+\doxysubsubsection{\texorpdfstring{m\_tokenList}{m\_tokenList}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}$>$ Mugen\+::\+Calculator\+::m\+\_\+token\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+トークンを入力順に格納するリスト 
+
+
+
+ \mbox{\hyperlink{_calculator_8h_source}{Calculator.\+h}} の \mbox{\hyperlink{_calculator_8h_source_l00135}{135}} 行目に定義があります。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Calculator/header/\mbox{\hyperlink{_calculator_8h}{Calculator.\+h}}\item 
+Calculator/source/\mbox{\hyperlink{_calculator_8cpp}{Calculator.\+cpp}}\end{DoxyCompactItemize}

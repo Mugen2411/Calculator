@@ -1,0 +1,59 @@
+\doxysection{Calculator.\+h}
+\hypertarget{_calculator_8h_source}{}\label{_calculator_8h_source}\index{Calculator/header/Calculator.h@{Calculator/header/Calculator.h}}
+\mbox{\hyperlink{_calculator_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_result_code_8h}{ResultCode.h}}>}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_t_o_k_e_n_8h}{TOKEN.h}}>}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00008}\mbox{\hyperlink{namespace_mugen}{00008}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_mugen}{Mugen}}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00012}00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_mugen}{Mugen}}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00017}\mbox{\hyperlink{class_mugen_1_1_calculator}{00017}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mugen_1_1_calculator}{Calculator}}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_calculator}{Calculator}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ pExpression,\ \textcolor{keywordtype}{size\_t}\ length);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_a7c147485f6e9325b1394674974399258}{Calculate}}(\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\&\ result);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_ac3ad97c3c0fc0a9e8cd524fa680525c7}{\_ConvertToTokenList}}();}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mugen_1_1_calculator_a5bb8e05cbf47bf64d32829a1013f2995}{forwardIndex}}();}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_aa5fe77b478aed89697a25a30b5409ee4}{\_MakeNumberToken}}(\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\&\ token);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_a2ce2c52af67f03403db8cbbda3c8eb63}{\_MakeOperatorToken}}(\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\&\ token);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_a20552ba0143e5d1c65a87bd3bcfdc1e0}{\_MakeBrockToken}}(\mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\&\ token);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_ab206dc6985b304bd42580903159663d2}{\_ConvertToReversePolish}}();}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_a56bc5e0d9c544af372467e5716087a9f}{\_ConvertOperatorToReversePolish}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\&\ current,\ std::stack<TOKEN>\&\ tokenStack);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_a0bbaa7a516f9603badb688635a78d891}{\_ConvertBlockEndToReversePolish}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\&\ current,\ std::stack<TOKEN>\&\ tokenStack);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_adb5516cbc7b07f36b7f3977f03b957e1}{\_CalclateReversePolish}}(\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\&\ ans);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_ac281a2038431498680ee5a4b770a9715}{\_ExtractUnaryOperator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\&\ operatorToken,\ std::stack<TOKEN>\&\ stack);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_ab5cf086689b13a1007a84deb9db2a4ba}{\_ExtractBinaryOperator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\&\ operatorToken,\ std::stack<TOKEN>\&\ stack);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00119}00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_a1497e4c1ad4ce365ac044aada2dee5a9}{\_CalclateUnaryOperator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\ operatorToken,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\&\ lhsToken,\ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\&\ ans);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00129}00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{ResultCode}}\ \mbox{\hyperlink{class_mugen_1_1_calculator_a5d18d5aaa19bd18d165205d22514f93f}{\_CalclateBinaryOperator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\ operatorToken,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\&\ lhsToken,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\&\ rhsToken,\ \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}\&\ ans);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00131}00131\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00132}\mbox{\hyperlink{class_mugen_1_1_calculator_ac300442e4b700373634ae3d59c8656c1}{00132}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_mugen_1_1_calculator_ac300442e4b700373634ae3d59c8656c1}{m\_pExpression}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00133}\mbox{\hyperlink{class_mugen_1_1_calculator_a66fd5bfabddf8e16b55a681a8e416392}{00133}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_mugen_1_1_calculator_a66fd5bfabddf8e16b55a681a8e416392}{m\_length}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00134}\mbox{\hyperlink{class_mugen_1_1_calculator_a2a89b187d27194c70352119c76609de8}{00134}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_mugen_1_1_calculator_a2a89b187d27194c70352119c76609de8}{m\_currentIndex}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00135}\mbox{\hyperlink{class_mugen_1_1_calculator_a59b788a6495432314618c4f4c6bb3b90}{00135}}\ \ \ \ \ \ \ \ \ std::list<TOKEN>\ \mbox{\hyperlink{class_mugen_1_1_calculator_a59b788a6495432314618c4f4c6bb3b90}{m\_tokenList}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00136}\mbox{\hyperlink{class_mugen_1_1_calculator_a147b00872586259f060870a90a9cff86}{00136}}\ \ \ \ \ \ \ \ \ std::queue<TOKEN>\ \mbox{\hyperlink{class_mugen_1_1_calculator_a147b00872586259f060870a90a9cff86}{m\_reversePolish}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00137}00137\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00138}00138\ \}}
+
+\end{DoxyCode}

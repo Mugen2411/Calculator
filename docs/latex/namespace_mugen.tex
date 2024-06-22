@@ -1,0 +1,133 @@
+\doxysection{Mugen 名前空間}
+\hypertarget{namespace_mugen}{}\label{namespace_mugen}\index{Mugen@{Mugen}}
+\doxysubsubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_mugen_1_1_calculator}{Calculator}}
+\begin{DoxyCompactList}\small\item\em 計算機本体 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}
+\begin{DoxyCompactList}\small\item\em 分数クラス \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{TOKEN}}
+\begin{DoxyCompactList}\small\item\em 式を分解したトークン \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Result\+Code}} \{ \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038a505a83f220c02df2f85c3810cd9ceb38}{Success}}
+, \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038aece592fd242f4ba674cc9da539a625a7}{Syntax\+Error}}
+, \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038a9fba64e5c39d0974981a417168beb6b2}{Divide\+By\+Zero}}
+ \}
+\begin{DoxyCompactList}\small\item\em リザルトコード \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespace_mugen_a339af8f149720d972d277c187cc2f957}{Token\+Tag}} \{ \newline
+\mbox{\hyperlink{namespace_mugen_a339af8f149720d972d277c187cc2f957ab2ee912b91d69b435159c7c3f6df7f5f}{Number}}
+, \mbox{\hyperlink{namespace_mugen_a339af8f149720d972d277c187cc2f957a9d980a8ffb775019ce1a8954ca3458c2}{Unary\+Operator}}
+, \mbox{\hyperlink{namespace_mugen_a339af8f149720d972d277c187cc2f957a5251fb21d7c26300b3a281976e839bec}{Binary\+Operator}}
+, \mbox{\hyperlink{namespace_mugen_a339af8f149720d972d277c187cc2f957adc928f724499316a6f7b5e595828863d}{Block\+Begin}}
+, \newline
+\mbox{\hyperlink{namespace_mugen_a339af8f149720d972d277c187cc2f957a1907d82bf1850c265a300dcc7b8a2eb5}{Block\+End}}
+ \}
+\begin{DoxyCompactList}\small\item\em トークンの種類を識別するタグ \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8}{Operator\+Tag}} \{ \mbox{\hyperlink{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8a32ba78fe43257d3e7f88e3935a8ea0d4}{Plus}}
+, \mbox{\hyperlink{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8a453fb623e752c5993f65bc410fd74fe5}{Minus}}
+, \mbox{\hyperlink{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8ae257376d913f3b53cbb4a9b19d770648}{Multiply}}
+, \mbox{\hyperlink{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8a0b914e196182d02615487e9793ecff3d}{Divide}}
+ \}
+\begin{DoxyCompactList}\small\item\em 演算子の種類を識別するタグ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{列挙型詳解}
+\Hypertarget{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8}\label{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8} 
+\index{Mugen@{Mugen}!OperatorTag@{OperatorTag}}
+\index{OperatorTag@{OperatorTag}!Mugen@{Mugen}}
+\doxysubsubsection{\texorpdfstring{OperatorTag}{OperatorTag}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8}{Mugen\+::\+Operator\+Tag}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+演算子の種類を識別するタグ 
+
+\begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Plus@{Plus}!Mugen@{Mugen}}\index{Mugen@{Mugen}!Plus@{Plus}}}\Hypertarget{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8a32ba78fe43257d3e7f88e3935a8ea0d4}\label{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8a32ba78fe43257d3e7f88e3935a8ea0d4} 
+Plus&加算 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Minus@{Minus}!Mugen@{Mugen}}\index{Mugen@{Mugen}!Minus@{Minus}}}\Hypertarget{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8a453fb623e752c5993f65bc410fd74fe5}\label{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8a453fb623e752c5993f65bc410fd74fe5} 
+Minus&減算 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Multiply@{Multiply}!Mugen@{Mugen}}\index{Mugen@{Mugen}!Multiply@{Multiply}}}\Hypertarget{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8ae257376d913f3b53cbb4a9b19d770648}\label{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8ae257376d913f3b53cbb4a9b19d770648} 
+Multiply&乗算 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Divide@{Divide}!Mugen@{Mugen}}\index{Mugen@{Mugen}!Divide@{Divide}}}\Hypertarget{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8a0b914e196182d02615487e9793ecff3d}\label{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8a0b914e196182d02615487e9793ecff3d} 
+Divide&除算 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+ \mbox{\hyperlink{_t_o_k_e_n_8h_source}{TOKEN.\+h}} の \mbox{\hyperlink{_t_o_k_e_n_8h_source_l00020}{20}} 行目に定義があります。
+
+\Hypertarget{namespace_mugen_a64edda6256e46434f145e70d3e46c038}\label{namespace_mugen_a64edda6256e46434f145e70d3e46c038} 
+\index{Mugen@{Mugen}!ResultCode@{ResultCode}}
+\index{ResultCode@{ResultCode}!Mugen@{Mugen}}
+\doxysubsubsection{\texorpdfstring{ResultCode}{ResultCode}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_mugen_a64edda6256e46434f145e70d3e46c038}{Mugen\+::\+Result\+Code}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+リザルトコード 
+
+\begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Success@{Success}!Mugen@{Mugen}}\index{Mugen@{Mugen}!Success@{Success}}}\Hypertarget{namespace_mugen_a64edda6256e46434f145e70d3e46c038a505a83f220c02df2f85c3810cd9ceb38}\label{namespace_mugen_a64edda6256e46434f145e70d3e46c038a505a83f220c02df2f85c3810cd9ceb38} 
+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SyntaxError@{SyntaxError}!Mugen@{Mugen}}\index{Mugen@{Mugen}!SyntaxError@{SyntaxError}}}\Hypertarget{namespace_mugen_a64edda6256e46434f145e70d3e46c038aece592fd242f4ba674cc9da539a625a7}\label{namespace_mugen_a64edda6256e46434f145e70d3e46c038aece592fd242f4ba674cc9da539a625a7} 
+Syntax\+Error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DivideByZero@{DivideByZero}!Mugen@{Mugen}}\index{Mugen@{Mugen}!DivideByZero@{DivideByZero}}}\Hypertarget{namespace_mugen_a64edda6256e46434f145e70d3e46c038a9fba64e5c39d0974981a417168beb6b2}\label{namespace_mugen_a64edda6256e46434f145e70d3e46c038a9fba64e5c39d0974981a417168beb6b2} 
+Divide\+By\+Zero&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+ \mbox{\hyperlink{_result_code_8h_source}{Result\+Code.\+h}} の \mbox{\hyperlink{_result_code_8h_source_l00008}{8}} 行目に定義があります。
+
+\Hypertarget{namespace_mugen_a339af8f149720d972d277c187cc2f957}\label{namespace_mugen_a339af8f149720d972d277c187cc2f957} 
+\index{Mugen@{Mugen}!TokenTag@{TokenTag}}
+\index{TokenTag@{TokenTag}!Mugen@{Mugen}}
+\doxysubsubsection{\texorpdfstring{TokenTag}{TokenTag}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_mugen_a339af8f149720d972d277c187cc2f957}{Mugen\+::\+Token\+Tag}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+トークンの種類を識別するタグ 
+
+\begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Number@{Number}!Mugen@{Mugen}}\index{Mugen@{Mugen}!Number@{Number}}}\Hypertarget{namespace_mugen_a339af8f149720d972d277c187cc2f957ab2ee912b91d69b435159c7c3f6df7f5f}\label{namespace_mugen_a339af8f149720d972d277c187cc2f957ab2ee912b91d69b435159c7c3f6df7f5f} 
+Number&数値 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UnaryOperator@{UnaryOperator}!Mugen@{Mugen}}\index{Mugen@{Mugen}!UnaryOperator@{UnaryOperator}}}\Hypertarget{namespace_mugen_a339af8f149720d972d277c187cc2f957a9d980a8ffb775019ce1a8954ca3458c2}\label{namespace_mugen_a339af8f149720d972d277c187cc2f957a9d980a8ffb775019ce1a8954ca3458c2} 
+Unary\+Operator&単項演算子 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BinaryOperator@{BinaryOperator}!Mugen@{Mugen}}\index{Mugen@{Mugen}!BinaryOperator@{BinaryOperator}}}\Hypertarget{namespace_mugen_a339af8f149720d972d277c187cc2f957a5251fb21d7c26300b3a281976e839bec}\label{namespace_mugen_a339af8f149720d972d277c187cc2f957a5251fb21d7c26300b3a281976e839bec} 
+Binary\+Operator&二項演算子 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BlockBegin@{BlockBegin}!Mugen@{Mugen}}\index{Mugen@{Mugen}!BlockBegin@{BlockBegin}}}\Hypertarget{namespace_mugen_a339af8f149720d972d277c187cc2f957adc928f724499316a6f7b5e595828863d}\label{namespace_mugen_a339af8f149720d972d277c187cc2f957adc928f724499316a6f7b5e595828863d} 
+Block\+Begin&括弧の始まり \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BlockEnd@{BlockEnd}!Mugen@{Mugen}}\index{Mugen@{Mugen}!BlockEnd@{BlockEnd}}}\Hypertarget{namespace_mugen_a339af8f149720d972d277c187cc2f957a1907d82bf1850c265a300dcc7b8a2eb5}\label{namespace_mugen_a339af8f149720d972d277c187cc2f957a1907d82bf1850c265a300dcc7b8a2eb5} 
+Block\+End&括弧の終わり \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+ \mbox{\hyperlink{_t_o_k_e_n_8h_source}{TOKEN.\+h}} の \mbox{\hyperlink{_t_o_k_e_n_8h_source_l00009}{9}} 行目に定義があります。
+

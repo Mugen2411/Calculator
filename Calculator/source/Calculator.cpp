@@ -367,7 +367,7 @@ namespace Mugen
 		ans = stack.top().value;
 		return ResultCode::Success;
 	}
-	ResultCode Calculator::_ExtractUnaryOperator(const TOKEN& operaterToken, std::stack<TOKEN>& stack)
+	ResultCode Calculator::_ExtractUnaryOperator(const TOKEN& operaterTokon, std::stack<TOKEN>& stack)
 	{
 		ResultCode resultCode;
 		TOKEN result = {};
@@ -378,7 +378,7 @@ namespace Mugen
 		}
 		TOKEN lhs = stack.top();
 		stack.pop();
-		resultCode = _CalclateUnaryOperator(operaterToken, lhs, result);
+		resultCode = _CalclateUnaryOperator(operaterTokon, lhs, result);
 		if (ResultCode::Success != resultCode)
 		{
 			return resultCode;
@@ -386,7 +386,7 @@ namespace Mugen
 		stack.emplace(result);
 		return ResultCode::Success;
 	}
-	ResultCode Calculator::_ExtractBinaryOperator(const TOKEN& operaterToken, std::stack<TOKEN>& stack)
+	ResultCode Calculator::_ExtractBinaryOperator(const TOKEN& operatorToken, std::stack<TOKEN>& stack)
 	{
 		TOKEN result = {};
 
@@ -398,7 +398,7 @@ namespace Mugen
 		stack.pop();
 		TOKEN lhs = stack.top();
 		stack.pop();
-		ResultCode resultCode = _CalclateBinaryOperator(operaterToken, lhs, rhs, result);
+		ResultCode resultCode = _CalclateBinaryOperator(operatorToken, lhs, rhs, result);
 		if (ResultCode::Success != resultCode)
 		{
 			return resultCode;

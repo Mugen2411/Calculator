@@ -1,0 +1,46 @@
+\doxysection{Fraction.\+h}
+\hypertarget{_fraction_8h_source}{}\label{_fraction_8h_source}\index{Calculator/header/Fraction.h@{Calculator/header/Fraction.h}}
+\mbox{\hyperlink{_fraction_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_mugen}{Mugen}}}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00009}\mbox{\hyperlink{class_mugen_1_1_fraction}{00009}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction_a2b5719c4ecfdb5a43b3ff45807c9df06}{Fraction}}();}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction_a2b5719c4ecfdb5a43b3ff45807c9df06}{Fraction}}(\_\_int64\ top,\ \_\_int64\ bottom);}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00027}\mbox{\hyperlink{class_mugen_1_1_fraction_a7cfd7c39cd77046e3af709d271b6ebc9}{00027}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction_a7cfd7c39cd77046e3af709d271b6ebc9}{\string~Fraction}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \_\_int64\ \mbox{\hyperlink{class_mugen_1_1_fraction_ab31e26afa2ff329e5aa480d1137131f1}{GetTop}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \_\_int64\ \mbox{\hyperlink{class_mugen_1_1_fraction_a16f75f6e28c9a18a66c1ce6b5eb9a4be}{GetBottom}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mugen_1_1_fraction_a85514187040788699751eb827ed60a2e}{SetTop}}(\_\_int64\ top);}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mugen_1_1_fraction_ae6ecc82acc978acda044dec133dd38cf}{SetBottom}}(\_\_int64\ bottom);}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_mugen_1_1_fraction_a9e6a04bf1e2ee7c5533f3f097b24ba51}{GetValue}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mugen_1_1_fraction_a34a2b26a35f3fb48f2ebcffe7e3558de}{Reduce}}();}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ \mbox{\hyperlink{class_mugen_1_1_fraction_aea62d8b2464db036dd1d85891466f86b}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ \mbox{\hyperlink{class_mugen_1_1_fraction_a000987928a970d298d9409a96319a8b2}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ \mbox{\hyperlink{class_mugen_1_1_fraction_ac5ae564fc0b7faddebfc52963e00beb9}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ \mbox{\hyperlink{class_mugen_1_1_fraction_acd83b71357979852ac15dc231db42919}{operator/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}}\ \mbox{\hyperlink{class_mugen_1_1_fraction_a000987928a970d298d9409a96319a8b2}{operator-\/}}();}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00098}00098\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00099}\mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{00099}}\ \ \ \ \ \ \ \ \ \_\_int64\ \mbox{\hyperlink{class_mugen_1_1_fraction_a158b992d32b1c3aa5c23c0e2e81d40d7}{m\_top}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00100}\mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{00100}}\ \ \ \ \ \ \ \ \ \_\_int64\ \mbox{\hyperlink{class_mugen_1_1_fraction_aada40b75d7fca1eac57eae673ccf08d2}{m\_bottom}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00101}00101\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_fraction_8h_source_l00102}00102\ \}}
+
+\end{DoxyCode}

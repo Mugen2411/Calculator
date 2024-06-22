@@ -19,7 +19,7 @@ namespace Mugen
 	public:
 		/**
 		 * @brief コンストラクタ
-		 * @param expression 式
+		 * @param pExpression 式
 		 * @param length 式の文字数
 		*/
 		Calculator(const char* pExpression, size_t length);
@@ -52,14 +52,14 @@ namespace Mugen
 
 		/**
 		 * @brief 式から演算子トークンを取り出す
-		 * @param tokenList トークンの出力変数
+		 * @param token トークンの出力変数
 		 * @return リザルトコード
 		*/
 		ResultCode _MakeOperatorToken(TOKEN& token);
 
 		/**
 		 * @brief 式から括弧トークンを取り出す
-		 * @param tokenList トークンの出力変数
+		 * @param token トークンの出力変数
 		 * @return リザルトコード
 		*/
 		ResultCode _MakeBrockToken(TOKEN& token);
@@ -95,17 +95,19 @@ namespace Mugen
 
 		/**
 		 * @brief 逆ポーランド記法に並べ替えられた式から単項演算子を抽出する
+		 * @param operatorToken 演算子
 		 * @param stack 処理待ちトークンが積まれたスタック
 		 * @return リザルトコード
 		*/
-		ResultCode _ExtractUnaryOperator(const TOKEN& operaterToken, std::stack<TOKEN>& stack);
+		ResultCode _ExtractUnaryOperator(const TOKEN& operatorToken, std::stack<TOKEN>& stack);
 
 		/**
 		 * @brief 逆ポーランド記法に並べ替えられた式から二項演算子を抽出する
+		 * @param operatorToken 演算子
 		 * @param stack 処理待ちトークンが積まれたスタック
 		 * @return リザルトコード
 		*/
-		ResultCode _ExtractBinaryOperator(const TOKEN& operaterToken, std::stack<TOKEN>& stack);
+		ResultCode _ExtractBinaryOperator(const TOKEN& operatorToken, std::stack<TOKEN>& stack);
 
 		/**
 		 * @brief 単項演算子の計算

@@ -1,0 +1,96 @@
+\doxysection{Mugen\+::TOKEN 構造体}
+\hypertarget{struct_mugen_1_1_t_o_k_e_n}{}\label{struct_mugen_1_1_t_o_k_e_n}\index{Mugen::TOKEN@{Mugen::TOKEN}}
+
+
+式を分解したトークン  
+
+
+
+
+{\ttfamily \#include $<$TOKEN.\+h$>$}
+
+
+
+Mugen\+::TOKEN 連携図\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{struct_mugen_1_1_t_o_k_e_n__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_mugen_a339af8f149720d972d277c187cc2f957}{Token\+Tag}} \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n_afdf8a391ceae0d6bb819143b9b9e808c}{tag}}
+\begin{DoxyCompactList}\small\item\em 識別タグ \end{DoxyCompactList}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\mbox{\hyperlink{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8}{OperatorTag}} \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n_abf29707b2989028f12765c36a0907e68}{operatorTag}}\\
+\>\>{\em 演算子識別タグ }\\
+\>\mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n_a90bdf07073714585d92895d44c1b6425}{value}}\\
+\>\>{\em 数値の値 }\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+式を分解したトークン 
+
+ \mbox{\hyperlink{_t_o_k_e_n_8h_source}{TOKEN.\+h}} の \mbox{\hyperlink{_t_o_k_e_n_8h_source_l00030}{30}} 行目に定義があります。
+
+
+
+\doxysubsection{メンバ詳解}
+\Hypertarget{struct_mugen_1_1_t_o_k_e_n_ad382411bee6e5f100e751c884ba8eeff}\label{struct_mugen_1_1_t_o_k_e_n_ad382411bee6e5f100e751c884ba8eeff} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{struct_mugen_1_1_t_o_k_e_n}{Mugen\+::\+TOKEN}}}
+
+\Hypertarget{struct_mugen_1_1_t_o_k_e_n_abf29707b2989028f12765c36a0907e68}\label{struct_mugen_1_1_t_o_k_e_n_abf29707b2989028f12765c36a0907e68} 
+\index{Mugen::TOKEN@{Mugen::TOKEN}!operatorTag@{operatorTag}}
+\index{operatorTag@{operatorTag}!Mugen::TOKEN@{Mugen::TOKEN}}
+\doxysubsubsection{\texorpdfstring{operatorTag}{operatorTag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a304e3e2343bdb8184e4028be128ce7d8}{Operator\+Tag}} Mugen\+::\+TOKEN\+::operator\+Tag}
+
+
+
+演算子識別タグ 
+
+
+
+ \mbox{\hyperlink{_t_o_k_e_n_8h_source}{TOKEN.\+h}} の \mbox{\hyperlink{_t_o_k_e_n_8h_source_l00035}{35}} 行目に定義があります。
+
+\Hypertarget{struct_mugen_1_1_t_o_k_e_n_afdf8a391ceae0d6bb819143b9b9e808c}\label{struct_mugen_1_1_t_o_k_e_n_afdf8a391ceae0d6bb819143b9b9e808c} 
+\index{Mugen::TOKEN@{Mugen::TOKEN}!tag@{tag}}
+\index{tag@{tag}!Mugen::TOKEN@{Mugen::TOKEN}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mugen_a339af8f149720d972d277c187cc2f957}{Token\+Tag}} Mugen\+::\+TOKEN\+::tag}
+
+
+
+識別タグ 
+
+
+
+ \mbox{\hyperlink{_t_o_k_e_n_8h_source}{TOKEN.\+h}} の \mbox{\hyperlink{_t_o_k_e_n_8h_source_l00032}{32}} 行目に定義があります。
+
+\Hypertarget{struct_mugen_1_1_t_o_k_e_n_a90bdf07073714585d92895d44c1b6425}\label{struct_mugen_1_1_t_o_k_e_n_a90bdf07073714585d92895d44c1b6425} 
+\index{Mugen::TOKEN@{Mugen::TOKEN}!value@{value}}
+\index{value@{value}!Mugen::TOKEN@{Mugen::TOKEN}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mugen_1_1_fraction}{Fraction}} Mugen\+::\+TOKEN\+::value}
+
+
+
+数値の値 
+
+
+
+ \mbox{\hyperlink{_t_o_k_e_n_8h_source}{TOKEN.\+h}} の \mbox{\hyperlink{_t_o_k_e_n_8h_source_l00036}{36}} 行目に定義があります。
+
+
+
+この構造体詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Calculator/header/\mbox{\hyperlink{_t_o_k_e_n_8h}{TOKEN.\+h}}\end{DoxyCompactItemize}
