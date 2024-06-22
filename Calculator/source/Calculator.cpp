@@ -275,6 +275,10 @@ namespace Mugen
 		while (!tokenStack.empty())
 		{
 			TOKEN lastOp = tokenStack.top();
+			if (TokenTag::BinaryOperator != lastOp.tag && TokenTag::UnaryOperator != lastOp.tag)
+			{
+				return ResultCode::SyntaxError;
+			}
 			m_reversePolish.emplace(lastOp);
 			tokenStack.pop();
 		}
